@@ -1,0 +1,14 @@
+{
+  "name": "albaherve_3_23022022",
+  "version": "1.0.0",
+  "description": "ohMyFood website",
+  "main": "index.js",
+  "scripts": {
+    "sassdev": "sass ./styles/sass/main.scss:./styles/css/style.css -w --style expanded",
+    "sassprod": "sass ./styles/sass/main.scss:./styles/css/style.css -w --style compressed",
+    "prefix": "postcss ./styles/css/style.css --use autoprefixer -d ./styles/css/prefixed/"
+  },
+  "author": "akh",
+  "license": "ISC",
+  "browserslist": "last 4 versions"
+}
