@@ -1,0 +1,34 @@
+@use "./colors"as *;
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    background-color: $background-dark;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+li {
+    list-style-type: none;
+}
+
+a,
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: $font-default;
+}
+
+button {
+    border: none;
+}

@@ -1,0 +1,107 @@
+@use "../base/colors"as *;
+@use "../base/typography"as *;
+@use "../utils/mixins"as *;
+
+main {
+    margin-top: (80px);
+}
+
+%wrapper {
+    padding: 6% 4%;
+}
+
+.location {
+    padding: 2% 3% 4% 3%;
+    background-color: $background-dark;
+    @include flex-center;
+    font-weight: $font-regular;
+
+    &>p {
+        position: relative;
+
+        &::before {
+            content: "\f3c5";
+            font-family: "Font Awesome 5 Free";
+            font-size: 2rem;
+            font-weight: 900;
+            color: $icon-default-dark;
+            @include absolute-center(50%, -25%, -50%, -50%);
+        }
+
+    }
+}
+
+.hero {
+    @extend %wrapper;
+
+    background-color: $background-medium;
+    @include flex-center;
+    flex-direction: column;
+    text-align: center;
+
+    h1 {
+        padding: 0 15%;
+    }
+
+    p {
+        font-size: 1.8rem;
+        padding: 0 5%;
+    }
+}
+
+.journey {
+    padding: 6% 0;
+    background-color: $background-light;
+    @include flex-center;
+    flex-direction: column;
+
+    h2 {
+        padding-left: 4%;
+        align-self: flex-start;
+    }
+
+    & .card__container {
+        margin: 1em 0;
+        padding-left: 4%;
+    }
+
+}
+
+
+.restaurants {
+    @extend %wrapper;
+    @include flex-center;
+    flex-direction: column;
+    background-color: $background-medium;
+
+    h2 {
+        align-self: flex-start;
+    }
+
+    &>li {
+        width: 100%;
+    }
+
+    @include media-min(768px) {
+
+        &>ul {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+}
+
+
+footer {
+    background-color: $background-footer;
+    @extend %wrapper;
+
+    & .logo {
+        font-size: 2rem;
+        color: $font-light;
+    }
+
+    & a {
+        color: $font-light;
+    }
+}

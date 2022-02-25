@@ -1,0 +1,11 @@
+@use "../base/colors" as *;
+@use "../utils/mixins" as *;
+
+.cta {
+    padding: 1em 2em;
+    margin: 2em;
+    border-radius: 40px;
+    color: $font-light;
+    background-image: linear-gradient($color-secondary, $color-primary);
+    @include shadow(#000000);
+}

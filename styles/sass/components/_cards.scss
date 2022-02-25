@@ -1,0 +1,123 @@
+@use "../base/colors"as *;
+@use "../base/typography"as *;
+@use "../utils/mixins"as *;
+
+
+
+.journey .card {
+    padding: 2em 4vw 2em 2em;
+    margin-bottom: 1.5em;
+    background-color: $background-medium;
+    border-radius: 25px;
+    position: relative;
+    @include shadow(#000000);
+    @include flex-center;
+
+    &::before {
+        content: "";
+        @include absolute-center(50%, 0, -50%, -50%);
+        width: 25px;
+        height: 25px;
+        background-color: $color-primary;
+        border-radius: 100%;
+        z-index: 1;
+    }
+
+    &::after {
+        font-size: 1.4rem;
+        font-weight: $font-regular;
+        @include absolute-center(50%, 0, -50%, -50%);
+        color: $font-light;
+        z-index: 2;
+    }
+
+    &:nth-of-type(1)::after {
+        content: "1";
+    }
+
+    &:nth-of-type(2)::after {
+        content: "2";
+    }
+
+    &:nth-of-type(3)::after {
+        content: "3";
+    }
+
+    &__step {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+
+        &>i {
+            margin-right: 1em;
+            font-size: 2rem;
+            font-weight: 900;
+            color: $icon-default;
+        }
+
+        &>h3 {
+            position: relative;
+
+            &::before {
+                font-family: "Font Awesome 5 Free";
+                font-size: 2rem;
+                font-weight: 900;
+                color: $icon-default;
+                @include absolute-center(50%, -40px, -50%, -50%);
+            }
+        }
+    }
+}
+
+
+
+.restaurants .card {
+    max-width: 350px;
+    height: 200px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    @include shadow(#000000);
+
+    &__picture {
+        position: relative;
+        max-width: 350px;
+        height: 70%;
+        overflow: hidden;
+
+        &>img {
+            display: block;
+            width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+        }
+
+    }
+
+    &__content {
+        padding: 1.2em 1em 1em 1em;
+        background-color: $background-light;
+        height: 30%;
+
+        & h3 {
+            position: relative;
+        }
+
+        & h3::before {
+            content: "\f004";
+            font-family: "Font Awesome 5 Free";
+            font-size: 2rem;
+            font-weight: 400;
+            color: $icon-default;
+            @include absolute-center(50%, 90%, -50%, -50%);
+        }
+
+        & h3:hover::before {
+            color: transparent;
+            font-weight: 900;
+            background: linear-gradient($color-secondary, $color-primary);
+            -webkit-background-clip: text;
+            background-size: cover;
+        }
+    }
+}

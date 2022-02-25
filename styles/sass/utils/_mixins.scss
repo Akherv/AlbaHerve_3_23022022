@@ -1,0 +1,32 @@
+@use "../base/colors"as *;
+
+@mixin shadow ($color) {
+    box-shadow: 2px 4px 10px rgba($color, 0.2);
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin absolute-center ($top, $left, $translateX, $translateY) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    transform: translate($translateX, $translateY);
+}
+
+
+// RESPONSIVE
+
+$mediaTablet: 375px;
+$mediaDesktop: 375px;
+
+@mixin media-min ($_min-width) {
+    @media screen and (min-width: $_min-width) {
+        & {
+            @content;
+        }
+    }
+}

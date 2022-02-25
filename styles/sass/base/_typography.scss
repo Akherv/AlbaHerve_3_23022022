@@ -1,17 +1,37 @@
 // Font-family
-$font-primary: 'Roboto',
-sans-serif;
+$font-primary: 'Roboto', sans-serif;
+$font-secondary: 'Shrikhand', cursive;
 
 
 // Font-weight
-$font-light:400;
+$font-thin:300;
+$font-regular:400;
 $font-medium:600;
 $font-bold:700;
-$font-heavy:800;
+$font-black:800;
 
-
-p,
-a {
+body {
+    font-size: 1.4rem;
+    font-weight: $font-thin;
     font-family: $font-primary;
-    font-weight: $font-light;
+}
+
+h1 {
+    font-size:2.5rem;
+    font-weight: $font-black;
+}
+
+h2 {
+    font-size:2.4rem;
+    font-weight: $font-bold;
+}
+
+h3 {
+    font-size:1.4rem;
+    font-weight: $font-medium;
+    margin: 0;
+}
+
+.icons {
+    width: 2rem;
 }

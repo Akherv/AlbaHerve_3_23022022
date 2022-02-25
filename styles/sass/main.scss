@@ -1,23 +1,22 @@
-@import 'utils/variables';
-@import 'utils/functions';
-@import 'utils/mixins';
-@import 'utils/placeholders';
+@forward 'utils/variables';
+@forward 'utils/functions';
+@forward 'utils/mixins';
+@forward 'utils/placeholders';
 
-@import 'vendors/normalize';
+@forward 'vendors/normalize';
 
-@import 'base/reset';
-@import 'base/typography';
-@import 'base/colors';
+@forward 'base/base';
+@forward 'base/typography';
+@forward 'base/colors';
 
-@import 'components/buttons';
-@import 'components/cards';
+@forward 'components/buttons';
+@forward 'components/cards';
 
-@import 'layout/navigation';
-@import 'layout/header';
-@import 'layout/containers';
-@import 'layout/footer';
+@forward 'layout/header';
+@forward 'layout/containers';
+@forward 'layout/footer';
 
-@import 'pages/home';
-@import 'pages/restaurants';
+@forward 'pages/home';
+@forward 'pages/restaurants';
 
-@import 'themes/theme';
+@forward 'themes/theme';
