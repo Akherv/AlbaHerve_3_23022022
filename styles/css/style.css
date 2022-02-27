@@ -377,16 +377,17 @@ h3 {
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
 }
 .restaurants .card__picture {
+  display: block;
   position: relative;
-  max-width: 350px;
   height: 70%;
   overflow: hidden;
 }
 .restaurants .card__picture > img {
   display: block;
   width: 100%;
-  min-height: 100%;
+  height: auto;
   object-fit: cover;
+  aspect-ratio: 1/1;
 }
 .restaurants .card__content {
   padding: 1.2em 1em 1em 1em;

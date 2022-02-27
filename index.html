@@ -64,9 +64,19 @@
                 <li>
                     <article class="card">
                         <a href="./pages/la-palette-du-gout.html">
-                            <div class="card__picture">
-                                <img src="./images/restaurants/jay-wennington.jpg" alt="" width="" height="">
-                            </div>
+                            <picture class="card__picture">
+                                <source media="(max-width: 374px)"
+                                    srcset="./images/restaurants/small/jay-wennington-small.webp 315w"
+                                    type="image/webp">
+                                <source media="(min-width: 375px)" srcset="./images/restaurants/medium/jay-wennington-medium.webp 551w,
+                                ./images/restaurants/large/jay-wennington-large.webp 1101w" type="image/webp">
+                                <source media="(max-width: 374px)"
+                                    srcset="./images/restaurants/small/jay-wennington-small.jpg 315w" type="image/jpg">
+                                <source media="(min-width: 375px)" srcset="./images/restaurants/medium/jay-wennington-medium.jpg 551w,
+                                ./images/restaurants/large/jay-wennington-large.jpg 1101w" type="image/jpg">
+                                <img src="./images/restaurants/small/jay-wennington.jpg" alt="" width="551"
+                                    height="367">
+                            </picture>
                             <div class="card__content">
                                 <h3>La palette du goût</h3>
                                 <p>Ménilmontant</p>
@@ -77,34 +87,63 @@
                 <li>
                     <article class="card">
                         <a href="./pages/la-note-enchantee.html"></a>
-                            <div class="card__picture">
-                                <img src="./images/restaurants/stil.jpg" alt="" width="" height="">
-                            </div>
-                            <div class="card__content">
-                                <h3>La note enchantée</h3>
-                                <p>Charonne</p>
-                            </div>
+                        <picture class="card__picture">
+                            <source media="(max-width: 374px)" srcset="./images/restaurants/small/stil-small.webp 378w"
+                                type="image/webp">
+                            <source media="(min-width: 375px)" srcset="./images/restaurants/medium/stil-medium.webp 756w,
+                                ./images/restaurants/large/stil-large.webp 1512w" type="image/webp">
+                            <source media="(max-width: 374px)" srcset="./images/restaurants/small/stil-small.jpg 378w"
+                                type="image/jpg">
+                            <source media="(min-width: 375px)" srcset="./images/restaurants/medium/stil-medium.jpg 756w,
+                                ./images/restaurants/large/stil-large.jpg 1512w" type="image/jpg">
+                            <img src="./images/restaurants/small/stil-small.jpg" alt="" width="378" height="473">
+                        </picture>
+                        <div class="card__content">
+                            <h3>La note enchantée</h3>
+                            <p>Charonne</p>
+                        </div>
                         </a>
                     </article>
+                </li>
                 <li>
                     <article class="card">
                         <a href="./pages/a-la-francaise.html"></a>
-                            <div class="card__picture">
-                                <img src="./images/restaurants/toa-heftiba.jpg" alt="" width="" height="">
-                            </div>
-                            <div class="card__content">
-                                <h3>À la française</h3>
-                                <p>Cité Rouge</p>
-                            </div>
+                        <picture class="card__picture">
+                            <source media="(max-width: 374px)"
+                                srcset="./images/restaurants/small/toa-heftiba-small.webp 492w" type="image/webp">
+                            <source media="(min-width: 375px)" srcset="./images/restaurants/medium/toa-heftiba-medium.webp 984w,
+                                ./images/restaurants/large/toa-heftiba-large.webp 1968w" type="image/webp">
+                            <source media="(max-width: 374px)"
+                                srcset="./images/restaurants/small/toa-heftiba-small.jpg 492w" type="image/jpg">
+                            <source media="(min-width: 375px)" srcset="./images/restaurants/medium/toa-heftiba-medium.jpg 984w,
+                                ./images/restaurants/large/toa-heftiba-large.jpg 1968w" type="image/jpg">
+                            <img src="./images/restaurants/small/toa-heftiba-small.jpg" alt="" width="492" height="328">
+                        </picture>
+                        <div class="card__content">
+                            <h3>À la française</h3>
+                            <p>Cité Rouge</p>
+                        </div>
                         </a>
                     </article>
                 </li>
                 <li>
                     <article class="card">
                         <a href="./pages/le-delice-des-sens.html">
-                            <div class="card__picture">
-                                <img src="./images/restaurants/louis-hansel-shotsoflouis.jpg" alt="" width="" height="">
-                            </div>
+                            <picture class="card__picture">
+                                <source media="(max-width: 374px)"
+                                    srcset="./images/restaurants/small/louis-hansel-shotsoflouis-small.webp 631w"
+                                    type="image/webp">
+                                <source media="(min-width: 375px)" srcset="./images/restaurants/medium/louis-hansel-shotsoflouis-medium.webp 1261w,
+                                ./images/restaurants/large/louis-hansel-shotsoflouis-large.webp 2522w"
+                                    type="image/webp">
+                                <source media="(max-width: 374px)"
+                                    srcset="./images/restaurants/small/louis-hansel-shotsoflouis-small.jpg 631w"
+                                    type="image/jpg">
+                                <source media="(min-width: 375px)" srcset="./images/restaurants/medium/louis-hansel-shotsoflouis-medium.jpg 1261w,
+                                ./images/restaurants/large/louis-hansel-shotsoflouis-large.jpg 2522w" type="image/jpg">
+                                <img src="./images/restaurants/small/louis-hansel-shotsoflouis-small.jpg" alt=""
+                                    width="631" height="432">
+                            </picture>
                             <div class="card__content">
                                 <h3>Le délice des sens</h3>
                                 <p>Folie-Méricourt</p>

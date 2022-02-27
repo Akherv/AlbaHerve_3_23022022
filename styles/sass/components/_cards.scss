@@ -80,16 +80,17 @@
     @include shadow(#000000);
 
     &__picture {
+        display: block;
         position: relative;
-        max-width: 350px;
         height: 70%;
         overflow: hidden;
 
         &>img {
             display: block;
             width: 100%;
-            min-height: 100%;
+            height: auto;
             object-fit: cover;
+            aspect-ratio: 1/1;
         }
 
     }
