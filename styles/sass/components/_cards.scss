@@ -1,58 +1,63 @@
 @use "../base/colors"as *;
 @use "../base/typography"as *;
 @use "../utils/mixins"as *;
+@use "../utils/placeholders"as *;
 
 
 
 .journey .card {
-    padding: 2em 4vw 2em 2em;
-    margin-bottom: 1.5em;
-    background-color: $background-medium;
-    border-radius: 25px;
-    position: relative;
-    @include shadow(#000000);
-    @include flex-center;
-
-    &::before {
-        content: "";
-        @include absolute-center(50%, 0, -50%, -50%);
-        width: 25px;
-        height: 25px;
-        background-color: $color-primary;
-        border-radius: 100%;
-        z-index: 1;
-    }
-
-    &::after {
-        font-size: 1.4rem;
-        font-weight: $font-regular;
-        @include absolute-center(50%, 0, -50%, -50%);
-        color: $font-light;
-        z-index: 2;
-    }
-
-    &:nth-of-type(1)::after {
-        content: "1";
-    }
-
-    &:nth-of-type(2)::after {
-        content: "2";
-    }
-
-    &:nth-of-type(3)::after {
-        content: "3";
-    }
-
+    
     &__step {
-        width: 100%;
+        width: clamp(200px,80vw,350px);
+        padding: 2em;
+        margin-bottom: 1.5em;
+        background-color: $background-medium;
+        border-radius: 25px;
+        position: relative;
+        @include shadow(#000000);
         display: flex;
         justify-content: flex-start;
+        align-items: center;
+
+        &::before {
+            content: "";
+            @include absolute-center(50%, 0, -50%, -50%);
+            width: 25px;
+            height: 25px;
+            background-color: $color-primary;
+            border-radius: 100%;
+            z-index: 1;
+        }
+    
+        &::after {
+            font-size: 1.4rem;
+            font-weight: $font-regular;
+            @include absolute-center(50%, 0, -50%, -50%);
+            color: $font-light;
+            z-index: 2;
+        }
+    
+        &:nth-of-type(1)::after {
+            content: "1";
+        }
+    
+        &:nth-of-type(2)::after {
+            content: "2";
+        }
+    
+        &:nth-of-type(3)::after {
+            content: "3";
+        }
+    
 
         &>i {
-            margin-right: 1em;
+            width: 20px;
+            height: 20px;
+            margin: 0 min(6vw,2em) 0 2vw;
             font-size: 2rem;
             font-weight: 900;
             color: $icon-default;
+            @extend %flex-center;
         }
 
         &>h3 {
@@ -66,14 +71,55 @@
                 @include absolute-center(50%, -40px, -50%, -50%);
             }
         }
+
+        &:hover {
+            @include background-opacity-light($color-primary)
+        }
+    }
+
+    @include media-min(768px) {
+        width: 100vw;
+        justify-content: space-around;
+
+        &__step {
+            flex-direction: column-reverse;
+            width: 30%;
+            max-width: 350px;
+            height: 20vh;
+            margin-top: 40px;
+
+            &::before {
+                content: "";
+                @include absolute-center(0, 50%, -50%, -50%);
+                width: 50px;
+                height: 50px;
+            }
+        
+            &::after {
+                font-size: 1.4rem;
+                @include absolute-center(0, 50%, -50%, -50%);
+            }
+
+            &>i {
+                width: 40px;
+                height: 40px;
+                font-size: 4rem;
+                margin: 20px 0 0;
+            }
+    
+            &>h3 {
+                &::before {
+                    font-size: 4rem;
+                }
+            }
+        }
     }
 }
 
 
 
 .restaurants .card {
-    max-width: 350px;
-    height: 200px;
+    width:clamp(250px,90vw,400px);
     border-radius: 20px;
     overflow: hidden;
     margin-bottom: 20px;
@@ -82,43 +128,119 @@
     &__picture {
         display: block;
         position: relative;
-        height: 70%;
+        height: 60%;
         overflow: hidden;
+        position: relative;
 
         &>img {
             display: block;
             width: 100%;
-            height: auto;
+            height: 100%;
             object-fit: cover;
-            aspect-ratio: 1/1;
+            aspect-ratio: 16/9;
         }
 
+        &.active::before {
+            content:"Nouveau";
+            padding: 0.5em 1em;
+            position: absolute;
+            font-weight: 700;
+            top:15px;
+            right: 15px;
+            background-color: $color-tertiary;
+            border-radius: 2px;
+            @include color-opacity-dark($color-tertiary);
+        }
     }
+
 
     &__content {
         padding: 1.2em 1em 1em 1em;
         background-color: $background-light;
-        height: 30%;
+        height: 40%;
+        display: flex;
+        flex-direction: row;
 
-        & h3 {
+        & .text-box {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+
+    @include media-min(768px) {
+      margin: 20px;
+    }
+}
+
+
+.menu .card {
+
+    
+    &__step {
+        // width: clamp(200px,80vw,350px);
+        padding: 1em;
+        margin-bottom: 1.5em;
+        background-color: $background-medium;
+        border-radius: 15px;
+        position: relative;
+        @include shadow(#000000);
+
+        &>i {
+            width: 20px;
+            height: 20px;
+            margin: 0 min(6vw,2em) 0 2vw;
+            font-size: 2rem;
+            font-weight: 900;
+            color: $icon-default;
+            @extend %flex-center;
+        }
+
+        &>h3 {
             position: relative;
         }
 
-        & h3::before {
-            content: "\f004";
-            font-family: "Font Awesome 5 Free";
-            font-size: 2rem;
-            font-weight: 400;
-            color: $icon-default;
-            @include absolute-center(50%, 90%, -50%, -50%);
-        }
-
-        & h3:hover::before {
-            color: transparent;
-            font-weight: 900;
-            background: linear-gradient($color-secondary, $color-primary);
-            -webkit-background-clip: text;
-            background-size: cover;
+        &:hover {
+            @include background-opacity-light($color-primary)
         }
     }
+
+    // @include media-min(768px) {
+    //     width: 100vw;
+    //     justify-content: space-around;
+
+    //     &__step {
+    //         flex-direction: column-reverse;
+    //         width: 30%;
+    //         max-width: 350px;
+    //         height: 20vh;
+    //         margin-top: 40px;
+
+    //         &::before {
+    //             content: "";
+    //             @include absolute-center(0, 50%, -50%, -50%);
+    //             width: 50px;
+    //             height: 50px;
+    //         }
+        
+    //         &::after {
+    //             font-size: 1.4rem;
+    //             @include absolute-center(0, 50%, -50%, -50%);
+    //         }
+
+    //         &>i {
+    //             width: 40px;
+    //             height: 40px;
+    //             font-size: 4rem;
+    //             margin: 20px 0 0;
+    //         }
+    
+    //         &>h3 {
+    //             &::before {
+    //                 font-size: 4rem;
+    //             }
+    //         }
+    //     }
+    // }
 }

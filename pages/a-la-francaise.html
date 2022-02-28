@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,13 +8,110 @@
     <meta name="description" content="À la française, restaurant gastronomique situé aux Champs-Elysées">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&family=Shrikhand&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&family=Shrikhand&display=swap"
+        rel="stylesheet" />
     <script src="https://kit.fontawesome.com/472662ce71.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../styles/css/style.css">
     <link rel="shortcut icon" href="#" />
     <title>À la française</title>
 </head>
+
 <body>
-    
+    <header>
+        <nav>
+            <a href="/">
+                <i class="fas fa-arrow-left" aria-label="return home"></i>
+            </a>
+        </nav>
+        <span class="logo">ohmyfood</span>
+    </header>
+    <main class="menu">
+        <picture class="card__picture">
+            <source media="(max-width: 374px)" srcset="../images/restaurants/small/toa-heftiba-small.webp 492w"
+                type="image/webp">
+            <source media="(min-width: 375px)" srcset="../images/restaurants/medium/toa-heftiba-medium.webp 984w,
+                    ../images/restaurants/large/toa-heftiba-large.webp 1968w" type="image/webp">
+            <source media="(max-width: 374px)" srcset="../images/restaurants/small/toa-heftiba-small.jpg 492w"
+                type="image/jpg">
+            <source media="(min-width: 375px)" srcset="../images/restaurants/medium/toa-heftiba-medium.jpg 984w,
+                    ../images/restaurants/large/toa-heftiba-large.jpg 1968w" type="image/jpg">
+            <img src="../images/restaurants/small/toa-heftiba-small.jpg" alt="" width="492" height="328">
+        </picture>
+
+        <div class="wrapper">
+            <div class="menu__header">
+                <h1 class="text-box">À la française</h1>
+                <div class="heart-box">
+                    <input type="checkbox" id="toggle" class="visually-hidden">
+                    <label for="toggle"><i class="fa-regular fa-heart control-me"></i></label>
+                </div>
+            </div>
+            <!-- ENTRÉES -->
+            <section class="starter menu-bloc">
+                <h2>Entrées</h2>
+                <ul class="card">
+                    <li class="card__step">
+                        <div class="card__text">
+                            <h3>Choisissez un restaurant</h3>
+                            <p>Aux zests d'orange</p>
+                        </div>
+                        <div class="card_price">
+                            25€
+                        </div>
+                    </li>
+                    <li class="card__step">
+                        <h3>Composez votre menu</h3>
+                    </li>
+                    <li class="card__step">
+                        <h3>Dégustez au restaurant</h3>
+                    </li>
+                </ul>
+            </section>
+            <!-- PLATS -->
+            <section class="main menu-bloc">
+                <h2>Plats</h2>
+                <ul class="card">
+                    <li class="card__step">
+                        <h3>Choisissez un restaurant</h3>
+                    </li>
+                    <li class="card__step">
+                        <h3>Composez votre menu</h3>
+                    </li>
+                    <li class="card__step">
+                        <h3>Dégustez au restaurant</h3>
+                    </li>
+                </ul>
+            </section>
+            <!-- DESSERT -->
+            <section class="dessert menu-bloc">
+                <h2>Desserts</h2>
+                <ul class="card">
+                    <li class="card__step">
+                        <h3>Choisissez un restaurant</h3>
+                    </li>
+                    <li class="card__step">
+                        <h3>Composez votre menu</h3>
+                    </li>
+                    <li class="card__step">
+                        <h3>Dégustez au restaurant</h3>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+            <button class="cta cta--order" aria-label="Explorer nos restaurants">Commander</button>
+       
+    </main>
+    <footer>
+        <div class="logo">ohmyfood</div>
+        <ul>
+            <li><a href="#"><i class="fa fa-utensils"></i>Proposer un restaurant</a></li>
+            <li><a href="#"><img src="../images/icons/handshake.svg">Devenir partenaire</a></li>
+            <li><a href="#">Mentions légales</a></li>
+            <li><a href="mailto:">Contact</a></li>
+        </ul>
+    </footer>
+
 </body>
+
 </html>

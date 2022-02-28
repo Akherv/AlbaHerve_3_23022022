@@ -1,6 +1,8 @@
 @use "../base/colors" as *;
 @use "../base/typography" as *;
 @use "../utils/mixins" as *;
+@use "../utils/placeholders" as *;
+
 
 
 header {
@@ -9,7 +11,7 @@ header {
     position: fixed;
     top: 0;
     background-color: $background-light;
-    @include flex-center;
+    @extend %flex-center;
     @include shadow(#000000);
     z-index: 10;
 }

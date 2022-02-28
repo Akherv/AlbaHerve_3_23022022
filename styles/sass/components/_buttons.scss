@@ -1,5 +1,6 @@
 @use "../base/colors" as *;
 @use "../utils/mixins" as *;
+@use "../utils/placeholders" as *;
 
 .cta {
     padding: 1em 2em;
@@ -8,4 +9,41 @@
     color: $font-light;
     background-image: linear-gradient($color-secondary, $color-primary);
     @include shadow(#000000);
+    font-weight: 500;
+}
+
+
+ .heart-box {
+width: 20%;
+@extend %flex-center;
+
+    & label i {
+        font-style: normal;
+        content: "\f004";
+        font-family: "Font Awesome 5 Free";
+        font-size: 2rem;
+        font-weight: 400;
+        color: $icon-default;
+        cursor: pointer;
+
+        &:hover {
+            color: transparent;
+            font-weight: 900;
+            background: linear-gradient($color-secondary, $color-primary);
+            -webkit-background-clip: text;
+            background-size: cover;
+        }
+    }
+
+    & input {
+        display: none;
+
+        &:checked ~ label i {
+            color: transparent;
+            font-weight: 900;
+            background: linear-gradient($color-secondary, $color-primary);
+            -webkit-background-clip: text;
+            background-size: cover;
+        }
+    }
 }

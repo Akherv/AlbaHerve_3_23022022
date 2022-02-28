@@ -1,9 +1,10 @@
 @use "../base/colors"as *;
 @use "../base/typography"as *;
 @use "../utils/mixins"as *;
+@use "../utils/placeholders"as *;
 
 main {
-    margin-top: (80px);
+    margin-top: (70px);
 }
 
 %wrapper {
@@ -13,7 +14,7 @@ main {
 .location {
     padding: 2% 3% 4% 3%;
     background-color: $background-dark;
-    @include flex-center;
+    @extend %flex-center;
     font-weight: $font-regular;
 
     &>p {
@@ -27,7 +28,19 @@ main {
             color: $icon-default-dark;
             @include absolute-center(50%, -25%, -50%, -50%);
         }
+    }
 
+    @include media-min(768px) {
+        position: absolute;
+        padding: 1% ;
+        width: 20%;
+        background-color: $color-tertiary;
+        color: #000;
+
+
+        &>p::before {
+            color: #000;
+        }
     }
 }
 
@@ -35,7 +48,7 @@ main {
     @extend %wrapper;
 
     background-color: $background-medium;
-    @include flex-center;
+    @extend %flex-center;
     flex-direction: column;
     text-align: center;
 
@@ -47,12 +60,27 @@ main {
         font-size: 1.8rem;
         padding: 0 5%;
     }
+
+
+    @include media-min(768px) {
+      background: linear-gradient(rgba(0, 0, 0, 0.9),rgba(255, 255, 255, 0.5)), url(../../../images/restaurants/medium/jay-wennington-medium.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+
+      padding: 10%;
+
+      h1,p {
+          color:#fff;
+      }
+     
+    }
 }
 
 .journey {
     padding: 6% 0;
     background-color: $background-light;
-    @include flex-center;
+    @extend %flex-center;
     flex-direction: column;
 
     h2 {
@@ -60,17 +88,20 @@ main {
         align-self: flex-start;
     }
 
-    & .card__container {
-        margin: 1em 0;
-        padding-left: 4%;
-    }
+    @include media-min(768px) {
+        padding: 2%;
+        & .card {
+            display: flex;
+            flex-direction: row
+        }
 
+    }
 }
 
 
 .restaurants {
     @extend %wrapper;
-    @include flex-center;
+    @extend %flex-center;
     flex-direction: column;
     background-color: $background-medium;
 
@@ -85,8 +116,13 @@ main {
     @include media-min(768px) {
 
         &>ul {
+            width: 100%;
             display: flex;
             flex-direction: row;
+            justify-content: space-around;
+            flex-wrap: wrap;
+
+        
         }
     }
 }
@@ -104,4 +140,85 @@ footer {
     & a {
         color: $font-light;
     }
+}
+
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & .card__picture {
+
+        & img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    & .wrapper {
+        width: 100%;
+        position: relative;
+        top: -40px;
+        background-color: $background-dark;
+        border-radius: 30px 30px 0 0;
+        display: flex;
+        flex-direction: column;
+
+        & .menu__header {
+            padding: 2% 4%;
+            width: 100%;
+            display: flex;
+    
+            & h1 {
+                font-family: shrikhand, cursive;
+                width: 80%;
+            }
+        }
+
+        & .menu-bloc {
+            padding: 2% 4%;
+            & h2 {
+                text-transform: uppercase;
+                font-weight: 400;
+                font-size: 2rem;
+                position: relative;
+
+                &::before {
+                    content:"";
+                    position: absolute;
+                    width: 50px;
+                    bottom: -10px;
+                    left: 0;
+                    color: $color-tertiary;
+                }
+            }
+
+            & .card__step {
+
+                display: flex;
+                justify-content: space-between;
+
+                &__text {
+                    width: 90%;
+                }
+    
+                &__price {
+                    width: 10%;
+                    align-self: flex-end;
+                }
+
+            }
+
+          
+        }
+    }
+
+
+    & .cta--order {
+        width: 180px;
+    }
+
+
 }

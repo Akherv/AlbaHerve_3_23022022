@@ -4,18 +4,20 @@
     box-shadow: 2px 4px 10px rgba($color, 0.2);
 }
 
-@mixin flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 @mixin absolute-center ($top, $left, $translateX, $translateY) {
     position: absolute;
     top: $top;
     left: $left;
     transform: translate($translateX, $translateY);
 }
+
+@mixin background-opacity-light($backgroundColor) {
+background-color: rgba($backgroundColor,0.2);
+}
+
+@mixin color-opacity-dark($color) {
+    color: darken($color, 40%);
+    }
 
 
 // RESPONSIVE

@@ -1,9 +1,9 @@
+@forward 'vendors/normalize';
+
 @forward 'utils/variables';
 @forward 'utils/functions';
 @forward 'utils/mixins';
 @forward 'utils/placeholders';
-
-@forward 'vendors/normalize';
 
 @forward 'base/base';
 @forward 'base/typography';
