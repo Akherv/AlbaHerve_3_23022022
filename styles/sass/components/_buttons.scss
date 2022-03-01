@@ -1,6 +1,7 @@
-@use "../base/colors" as *;
-@use "../utils/mixins" as *;
-@use "../utils/placeholders" as *;
+@use "../base/colors"as *;
+@use "../utils/mixins"as *;
+@use "../utils/placeholders"as *;
+
 
 .cta {
     padding: 1em 2em;
@@ -13,9 +14,9 @@
 }
 
 
- .heart-box {
-width: 20%;
-@extend %flex-center;
+.heart-box {
+    width: 20%;
+    @extend %flex-center;
 
     & label i {
         font-style: normal;
@@ -38,12 +39,47 @@ width: 20%;
     & input {
         display: none;
 
-        &:checked ~ label i {
+        &:checked~label i {
             color: transparent;
             font-weight: 900;
             background: linear-gradient($color-secondary, $color-primary);
             -webkit-background-clip: text;
             background-size: cover;
+        }
+    }
+}
+
+.check-box {
+
+    & label {
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 100%;
+        top: 0;
+        left: 100%;
+        background-color: $color-tertiary;
+        transition: .6s ease-in-out;
+        z-index: 1;
+        cursor: pointer;
+
+        & i {
+            font-style: normal;
+            content: "\f00c";
+            font-family: "Font Awesome 5 Free";
+            position: absolute;
+            font-size: 1em;
+            font-weight: 900;
+            color: $color-tertiary;
+            background-color: #fff;
+            width: 20px;
+            height: 20px;
+            padding: 3%;
+            border-radius: 50%;
+            top: 40%;
+            left: 100%;
+            transition: .6s ease-in-out;
+            z-index: 2;
         }
     }
 }
