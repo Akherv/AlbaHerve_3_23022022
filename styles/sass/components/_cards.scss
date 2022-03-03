@@ -22,7 +22,7 @@
 
     &__step {
         width: clamp(200px, 80vw, 350px);
-
+        animation: step-action 1s ease backwards;
 
         &::before {
             content: "";
@@ -79,6 +79,34 @@
 
         &:hover {
             @include background-opacity-light($color-primary)
+        }
+
+
+        &:nth-child(1) {
+            animation-delay: 2000ms;
+        }
+
+        &:nth-child(2) {
+            animation-delay: 3000ms;
+        }
+
+        &:nth-child(3) {
+            animation-delay: 4000ms;
+        }
+
+        @keyframes step-action {
+
+            0% {
+                opacity: 0;
+                background-position: top 50px;
+            }
+
+            100% {
+                opacity: 1;
+                @include background-opacity-light($color-primary);
+                background-position: top 0px;
+            }
+
         }
     }
 
@@ -179,21 +207,27 @@
 
 
 .menu .card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-    $anim-speed:500ms;
+    $anim-speed: 500ms;
 
     &__menu {
         opacity: 0;
         padding: 0;
         display: flex;
         justify-content: space-between;
-        min-width: 350px;
-        overflow: hidden;
-        height: 100px;
+        max-width: 350px;
+        width: 100%;
+        height: 80px;
         cursor: pointer;
-        animation: appear $anim-speed linear ;
-        animation-fill-mode:forwards;
+        animation: appear $anim-speed linear;
+        animation-fill-mode: forwards;
         animation-delay: 2000ms;
+        overflow: hidden;
 
         @for $i from 1 through 10 {
             &:nth-child(#{$i}) {
@@ -214,68 +248,76 @@
         }
 
         & .card-container {
+            max-width: 350px;
             width: 100%;
             height: 100%;
             display: flex;
+            align-items: center;
             justify-content: space-between;
 
-            & .card {
 
+            & .card {
                 &__text {
-                    width: 90%;
-                    margin: 2em;
-                    text-overflow: ellipsis;
-        
+                    margin: 20px 0 20px 20px;
+                    white-space: nowrap;
+                    display: inline-grid;
+                    transition-property: margin-right;
+                    max-width: 70%;
+                    min-width: 60%;
+
                     & h3 {
-                        margin-bottom: 5px;
+                        margin-bottom: 10px;
+                    }
+
+                    & p {
+                        overflow: hidden;
+                        text-overflow: ellipsis;
                     }
                 }
-        
+
                 &__price {
-                    width: 10%;
-                    margin:2em;
-                    align-self: flex-end;
+                    background-color: $background-medium;
+                    padding-bottom: 18px;
+                    height: 100%;
                     font-weight: 800;
-                    transition: .6s ease-in-out;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: center;
+                    max-width: 50px;
+                    width: 20%;
                 }
             }
 
             &:hover {
 
-                & .card__price {
-                    transform: translateX(-350%);
-                }
+                & .check-box {
+                    margin-right: 0px;
 
-                & .check-box>label {
-                    transform: translateX(-100%);
-                }
+                    &>label {
 
-                & .check-box>label i {
-                    transform: translateX(-300%) rotate(360deg);
-                    transform-origin: center center;
+                        & i {
+                            transform: rotate(1turn);
+                            transform-origin: center center;
+                        }
+                    }
                 }
             }
         }
 
-
         & input {
             display: none;
 
-            &:checked~.card-container {
+                &:checked~.card-container {
 
-                & .card__price {
-                    transform: translateX(-300%);
-                }
+                    & .check-box {
+                        margin-right: 0px;
+                    }
 
-                & .check-box>label {
-                    transform: translateX(-100%);
+                    & .check-box>label i {
+                        transform: translateX(0%);
+                        transform-origin: center center;
+                    }
                 }
-
-                & .check-box>label i {
-                    transform: translateX(-300%) rotate(360deg);
-                    transform-origin: center center;
-                }
-            }
         }
     }
 }

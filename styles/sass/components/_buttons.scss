@@ -37,21 +37,18 @@
             color: transparent;
             font-weight: 900;
             background: linear-gradient($color-secondary, $color-primary);
-            -webkit-background-clip: text;
-            background-size: cover;
-            background-position: top;
-            animation: heartfill 2s forwards;
-        }
+            background-clip: text;
+            animation: heartfill 1s linear forwards;
+    }
 
-            &hover::after {
             @keyframes heartfill {
                 0% {
+                  background-position: left 0 top 20px;
                 }
-
                 100% {
+                  background-position: left 0 top 0px;
                 }
-            }
-        }
+              }
     }
 
     & input {
@@ -68,18 +65,25 @@
 }
 
 .check-box {
-
+    position: relative;
+    margin-right: -100px;
+    width: 20%;
+    height: 100%;
+    transition: 1s ease-in-out;
+    transition-property: margin-right;
     & label {
         content: "";
-        position: absolute;
-        width: 100px;
+        position: relative;
+        max-width: 100px;
         height: 100%;
         top: 0;
-        left: 100%;
         background-color: $color-tertiary;
-        transition: .6s ease-in-out;
+        transition: 1s ease-in-out;
         z-index: 1;
         cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         & i {
             font-style: normal;
@@ -94,9 +98,7 @@
             height: 20px;
             padding: 3%;
             border-radius: 50%;
-            top: 40%;
-            left: 100%;
-            transition: .6s ease-in-out;
+            transition: 1s ease-in-out;
             z-index: 2;
         }
     }

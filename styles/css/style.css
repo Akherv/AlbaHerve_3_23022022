@@ -474,12 +474,17 @@ h3 {
   color: transparent;
   font-weight: 900;
   background: linear-gradient(#FF79DA, #9356DC);
-  -webkit-background-clip: text;
-  background-size: cover;
-  background-position: top;
-  animation: heartfill 2s forwards;
+  background-clip: text;
+  animation: heartfill 1s linear forwards;
 }
-@keyframes heartfill {}
+@keyframes heartfill {
+  0% {
+    background-position: left 0 top 20px;
+  }
+  100% {
+    background-position: left 0 top 0px;
+  }
+}
 .heart-box input {
   display: none;
 }
@@ -491,17 +496,27 @@ h3 {
   background-size: cover;
 }
 
+.check-box {
+  position: relative;
+  margin-right: -100px;
+  width: 20%;
+  height: 100%;
+  transition: 1s ease-in-out;
+  transition-property: margin-right;
+}
 .check-box label {
   content: "";
-  position: absolute;
-  width: 100px;
+  position: relative;
+  max-width: 100px;
   height: 100%;
   top: 0;
-  left: 100%;
   background-color: #99E2d0;
-  transition: 0.6s ease-in-out;
+  transition: 1s ease-in-out;
   z-index: 1;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .check-box label i {
   font-style: normal;
@@ -516,9 +531,7 @@ h3 {
   height: 20px;
   padding: 3%;
   border-radius: 50%;
-  top: 40%;
-  left: 100%;
-  transition: 0.6s ease-in-out;
+  transition: 1s ease-in-out;
   z-index: 2;
 }
 
@@ -536,6 +549,7 @@ h3 {
 
 .journey .card__step {
   width: clamp(200px, 80vw, 350px);
+  animation: step-action 1s ease backwards;
 }
 .journey .card__step::before {
   content: "";
@@ -591,6 +605,26 @@ h3 {
 }
 .journey .card__step:hover {
   background-color: rgba(147, 86, 220, 0.2);
+}
+.journey .card__step:nth-child(1) {
+  animation-delay: 2000ms;
+}
+.journey .card__step:nth-child(2) {
+  animation-delay: 3000ms;
+}
+.journey .card__step:nth-child(3) {
+  animation-delay: 4000ms;
+}
+@keyframes step-action {
+  0% {
+    opacity: 0;
+    background-position: top 50px;
+  }
+  100% {
+    opacity: 1;
+    background-color: rgba(147, 86, 220, 0.2);
+    background-position: top 0px;
+  }
 }
 @media screen and (min-width: 768px) {
   .journey .card {
@@ -681,18 +715,26 @@ h3 {
   }
 }
 
+.menu .card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .menu .card__menu {
   opacity: 0;
   padding: 0;
   display: flex;
   justify-content: space-between;
-  min-width: 350px;
-  overflow: hidden;
-  height: 100px;
+  max-width: 350px;
+  width: 100%;
+  height: 80px;
   cursor: pointer;
   animation: appear 500ms linear;
   animation-fill-mode: forwards;
   animation-delay: 2000ms;
+  overflow: hidden;
 }
 .menu .card__menu:nth-child(1) {
   animation-delay: 100ms;
@@ -735,47 +777,54 @@ h3 {
   }
 }
 .menu .card__menu .card-container {
+  max-width: 350px;
   width: 100%;
   height: 100%;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 .menu .card__menu .card-container .card__text {
-  width: 90%;
-  margin: 2em;
-  text-overflow: ellipsis;
+  margin: 20px 0 20px 20px;
+  white-space: nowrap;
+  display: inline-grid;
+  transition-property: margin-right;
+  max-width: 70%;
+  min-width: 60%;
 }
 .menu .card__menu .card-container .card__text h3 {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+}
+.menu .card__menu .card-container .card__text p {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .menu .card__menu .card-container .card__price {
-  width: 10%;
-  margin: 2em;
-  align-self: flex-end;
+  background-color: #F6F6F6;
+  padding-bottom: 18px;
+  height: 100%;
   font-weight: 800;
-  transition: 0.6s ease-in-out;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  max-width: 50px;
+  width: 20%;
 }
-.menu .card__menu .card-container:hover .card__price {
-  transform: translateX(-350%);
-}
-.menu .card__menu .card-container:hover .check-box > label {
-  transform: translateX(-100%);
+.menu .card__menu .card-container:hover .check-box {
+  margin-right: 0px;
 }
 .menu .card__menu .card-container:hover .check-box > label i {
-  transform: translateX(-300%) rotate(360deg);
+  transform: rotate(1turn);
   transform-origin: center center;
 }
 .menu .card__menu input {
   display: none;
 }
-.menu .card__menu input:checked ~ .card-container .card__price {
-  transform: translateX(-300%);
-}
-.menu .card__menu input:checked ~ .card-container .check-box > label {
-  transform: translateX(-100%);
+.menu .card__menu input:checked ~ .card-container .check-box {
+  margin-right: 0px;
 }
 .menu .card__menu input:checked ~ .card-container .check-box > label i {
-  transform: translateX(-300%) rotate(360deg);
+  transform: translateX(0%);
   transform-origin: center center;
 }
 
@@ -937,8 +986,8 @@ main {
 }
 .menu .card__picture img {
   object-fit: cover;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 30vh;
 }
 .menu .wrapper {
   width: 100%;
@@ -985,30 +1034,53 @@ main {
   .menu {
     background-color: #EAEAEA;
   }
-  .menu .card__picture {
-    height: 35vh;
-  }
   .menu .card__picture img {
     object-fit: cover;
     object-position: top;
     width: 100vw;
+    height: 40vh;
   }
-  .menu .wrapper {
+  .menu .card__picture .wrapper {
     width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
   }
-  .menu .menu__header {
+  .menu .card__picture .wrapper .menu-bloc {
+    padding: 2%;
+    width: 33%;
+  }
+  .menu .card__picture .menu__header {
     width: 100%;
   }
-  .menu .menu__header .heart-box {
+  .menu .card__picture .menu__header .heart-box {
     display: flex;
     justify-content: end;
   }
-  .menu .card__menu {
+  .menu .card__picture .card__menu {
     width: 100%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .menu {
+    background-color: #EAEAEA;
+  }
+  .menu .card__picture img {
+    height: 50vh;
+    object-position: center;
+  }
+  .menu .wrapper-section {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .menu .wrapper-section .menu-bloc {
+    width: 30%;
+  }
+  .menu .wrapper-section .menu-bloc .card__menu {
+    min-width: 340px;
   }
 }
 
