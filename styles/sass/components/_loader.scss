@@ -1,0 +1,159 @@
+@use "../base/colors" as *;
+@use "../utils/placeholders"as *;
+
+
+.loading{
+    overflow: hidden;
+    animation: reveal 2s ease-out forwards ;
+
+    &::before {
+        content: "";
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background-color: black;
+        top: 0;
+        left: 0;
+        z-index: 40;
+        overflow: hidden;
+        animation: reveal 2s ease-out forwards ;
+    }
+ }
+
+ .loader {
+     position:absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%,-50%);
+     height: 200px;
+     width: 200px;
+     z-index: 50;
+     @extend %flex-center;
+     animation: reveal 2s ease-out forwards ;
+
+     &__element {
+         position: absolute;
+         background-color: transparent;
+
+         &--1 {
+            width: 100px;
+            height: 100px;
+            @extend %flex-center;
+            animation: rotate 2s linear 2;
+    
+            &::before {
+                content: "";
+                position: absolute;
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                border-top: 10px solid $color-primary;
+            }
+    
+            &::after {
+                content: "";
+                position: absolute;
+                top: 10px;
+                left: 100px;
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                background-color: $color-secondary;
+            }
+        }
+    
+         &--2 {
+            width: 50px;
+            height: 50px;
+            animation: invert-rotate 2s linear;
+    
+            &::before {
+                content: "";
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                border-top: 10px solid $color-secondary;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 50px;
+                left: 10px;
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                background-color: $color-tertiary;
+            }
+        }
+    
+        &--3 {
+            width: 25px;
+            height: 25px;
+            @extend %flex-center;
+            animation: rotate 2s linear ;
+    
+            &::before {
+                content: "";
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                border-top: 10px solid $color-tertiary;
+            }
+    
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left:50%;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                transform: translate(-50%,-50%);
+                background-color: $color-primary;
+            }
+         }
+     }
+ }
+
+
+ @keyframes reveal {
+    0% {
+        opacity: 1;
+        z-index: 30;
+        overflow:hidden;
+    }
+    
+    99% {
+        opacity: 1;
+        z-index: 30;
+        overflow:hidden;
+    }
+    100% {
+        opacity: 1;
+        z-index: -1;
+        overflow:visible;
+    }
+}
+
+ @keyframes rotate {
+     0% {
+         transform: rotate(0);
+     }
+
+     100% {
+         transform: rotate(360deg);
+     }
+ }
+
+
+ @keyframes invert-rotate {
+    0% {
+        transform: rotate(0);
+    }
+    
+    100% {
+        transform: rotate(-360deg);
+    }
+}

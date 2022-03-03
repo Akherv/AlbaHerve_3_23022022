@@ -5,13 +5,20 @@
 
 
 footer {
-
+    @extend %wrapper;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: $background-footer;
 
     & .logo {
+        font-size: 2rem;
         margin: 0 0 10px 0;
+        color: $font-light;
+    }
+
+    & a {
+        color: $font-light;
     }
 
     & ul {
@@ -24,8 +31,5 @@ footer {
         & i, & img {
             margin-right: 10px;
         }
-     
     }
-    
-
 }

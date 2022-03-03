@@ -9,14 +9,14 @@
 @forward 'base/typography';
 @forward 'base/colors';
 
+@forward 'components/loader';
 @forward 'components/buttons';
 @forward 'components/cards';
 
 @forward 'layout/header';
-@forward 'layout/containers';
 @forward 'layout/footer';
 
 @forward 'pages/home';
-@forward 'pages/restaurants';
+@forward 'pages/menu';
 
 @forward 'themes/theme';

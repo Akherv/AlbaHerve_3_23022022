@@ -1,7 +1,7 @@
 @use "../base/colors"as *;
 
-@mixin shadow ($color) {
-    box-shadow: 2px 4px 10px rgba($color, 0.2);
+@mixin shadow ($color, $opacity) {
+    box-shadow: 2px 4px 10px rgba($color, $opacity);
 }
 
 @mixin absolute-center ($top, $left, $translateX, $translateY) {

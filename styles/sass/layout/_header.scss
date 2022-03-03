@@ -12,7 +12,7 @@ header {
     top: 0;
     background-color: $background-light;
     @extend %flex-center;
-    @include shadow(#000000);
+    @include shadow(#000000,0.2);
     z-index: 10;
 }
 

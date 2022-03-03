@@ -4,13 +4,19 @@
 
 
 .cta {
+    border: none;
     padding: 1em 2em;
     margin: 2em;
     border-radius: 40px;
     color: $font-light;
     background-image: linear-gradient($color-secondary, $color-primary);
-    @include shadow(#000000);
+    @include shadow(#000000, 0.2);
     font-weight: 500;
+
+    &:hover {
+        @include shadow(#000000, 0.4);
+        background-image: linear-gradient(rgba($color-secondary, 0.95), rgba($color-primary, 0.95));
+    }
 }
 
 
@@ -33,6 +39,18 @@
             background: linear-gradient($color-secondary, $color-primary);
             -webkit-background-clip: text;
             background-size: cover;
+            background-position: top;
+            animation: heartfill 2s forwards;
+        }
+
+            &hover::after {
+            @keyframes heartfill {
+                0% {
+                }
+
+                100% {
+                }
+            }
         }
     }
 
