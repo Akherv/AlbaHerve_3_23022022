@@ -2,14 +2,15 @@
 @use "../base/typography"as *;
 @use "../utils/mixins"as *;
 @use "../utils/placeholders"as *;
+@use "../utils/animations"as *;
 
 .card {
 
     & li {
-        padding: 2em;
+        padding: 1.8em 2em;
         margin-bottom: 1.5em;
         background-color: $background-medium;
-        border-radius: 25px;
+        border-radius: 15px;
         position: relative;
         @include shadow(#000000, 0.2);
         display: flex;
@@ -21,8 +22,8 @@
 .journey .card {
 
     &__step {
-        width: clamp(200px, 80vw, 350px);
-        animation: step-action 1s ease backwards;
+        width: clamp(250px, 85vw, 350px);
+        animation: step-action 0.5s ease backwards;
 
         &::before {
             content: "";
@@ -30,7 +31,7 @@
             width: 25px;
             height: 25px;
             background-color: $color-primary;
-            border-radius: 100%;
+            border-radius: 50%;
             z-index: 1;
         }
 
@@ -63,6 +64,7 @@
             font-weight: 900;
             color: $icon-default;
             @extend %flex-center;
+            animation: step-action-icon 0.5s ease backwards;
         }
 
         &>h3 {
@@ -81,33 +83,35 @@
             @include background-opacity-light($color-primary)
         }
 
+        &:hover i {
+            color: $color-primary;
+        }
+
 
         &:nth-child(1) {
             animation-delay: 2000ms;
         }
 
         &:nth-child(2) {
-            animation-delay: 3000ms;
+            animation-delay: 2500ms;
         }
 
         &:nth-child(3) {
-            animation-delay: 4000ms;
+            animation-delay: 3000ms;
         }
 
-        @keyframes step-action {
-
-            0% {
-                opacity: 0;
-                background-position: top 50px;
-            }
-
-            100% {
-                opacity: 1;
-                @include background-opacity-light($color-primary);
-                background-position: top 0px;
-            }
-
+        &:nth-child(1)>i {
+            animation-delay: 2000ms;
         }
+
+        &:nth-child(2)>i {
+            animation-delay: 2500ms;
+        }
+
+        &:nth-child(3)>i {
+            animation-delay: 3000ms;
+        }
+
     }
 
     @include media-min(768px) {
@@ -152,7 +156,7 @@
 
 .restaurants .card {
     width: clamp(250px, 90vw, 400px);
-    border-radius: 20px;
+    border-radius: 15px;
     overflow: hidden;
     margin-bottom: 20px;
     @include shadow(#000000, 0.2%);
@@ -197,6 +201,11 @@
             width: 80%;
             display: flex;
             flex-direction: column;
+
+            & h3 {
+                font-size: 1.8rem;
+                margin-bottom: 5px;
+            }
         }
     }
 
@@ -216,13 +225,13 @@
     $anim-speed: 500ms;
 
     &__menu {
-        opacity: 0;
-        padding: 0;
+        background-color: $background-light;
+        padding: 0 1em;
         display: flex;
         justify-content: space-between;
         max-width: 350px;
         width: 100%;
-        height: 80px;
+        min-height: 70px;
         cursor: pointer;
         animation: appear $anim-speed linear;
         animation-fill-mode: forwards;
@@ -235,17 +244,7 @@
             }
         }
 
-        @keyframes appear {
-            0% {
-                opacity: 0;
-                top: 100px;
-            }
-
-            100% {
-                opacity: 1;
-                top: 0px;
-            }
-        }
+       
 
         & .card-container {
             max-width: 350px;
@@ -258,48 +257,56 @@
 
             & .card {
                 &__text {
-                    margin: 20px 0 20px 20px;
-                    white-space: nowrap;
                     display: inline-grid;
-                    transition-property: margin-right;
-                    max-width: 70%;
                     min-width: 60%;
 
                     & h3 {
-                        margin-bottom: 10px;
+                        font-size: 1.1em;
+                        font-weight: 500;
+                        margin-bottom: 5px;
+                        max-width: 225px;
+                        overflow: hidden;
+                        word-wrap: break-word;
                     }
 
                     & p {
+
+                    white-space: nowrap;
                         overflow: hidden;
                         text-overflow: ellipsis;
                     }
                 }
 
                 &__price {
-                    background-color: $background-medium;
+                    background-color: $background-light;
                     padding-bottom: 18px;
-                    height: 100%;
+                    min-height: 70px;
                     font-weight: 800;
                     display: flex;
                     align-items: flex-end;
                     justify-content: center;
                     max-width: 50px;
                     width: 20%;
+                    transition: 1s linear;
+                   
                 }
             }
 
             &:hover {
 
-                & .check-box {
-                    margin-right: 0px;
-
-                    &>label {
-
-                        & i {
-                            transform: rotate(1turn);
-                            transform-origin: center center;
-                        }
+                & .card__price{
+                    margin-right: 80px;
                     }
+
+                    & .check-box {
+
+                        &>label {
+                           transform: translateX(-80px);
+                       & i {
+                           transform: rotate(1turn);
+                           transform-origin: center center;
+                       }
+                   }
                 }
             }
         }
@@ -309,8 +316,12 @@
 
                 &:checked~.card-container {
 
-                    & .check-box {
-                        margin-right: 0px;
+                    & .card__price {
+                        margin-right: 80px;
+                    }
+
+                    & .check-box>label {
+                        transform: translateX(-80px);
                     }
 
                     & .check-box>label i {

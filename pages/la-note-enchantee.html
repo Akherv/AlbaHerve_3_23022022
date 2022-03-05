@@ -14,6 +14,220 @@
     <title>La note enchantée</title>
 </head>
 <body>
-    
+    <header>
+        <nav>
+            <a href="/" aria-label="retour à la page d'accueil">
+                <i class="fas fa-arrow-left" aria-label="return home"></i>
+            </a>
+        </nav>
+        <span class="logo">ohmyfood</span>
+    </header>
+    <main class="menu">
+        <picture class="card__picture active">
+            <source media="(max-width: 374px)" srcset="../images/restaurants/small/stil-small.webp 378w"
+                type="image/webp">
+            <source media="(min-width: 375px)" srcset="../images/restaurants/medium/stil-medium.webp 756w,
+                ../images/restaurants/large/stil-large.webp 1512w" type="image/webp">
+            <source media="(max-width: 374px)" srcset="../images/restaurants/small/stil-small.jpg 378w"
+                type="image/jpg">
+            <source media="(min-width: 375px)" srcset="../images/restaurants/medium/stil-medium.jpg 756w,
+                ../images/restaurants/large/stil-large.jpg 1512w" type="image/jpg">
+            <img src="../images/restaurants/small/stil-small.jpg" alt="Assiette de boulette de viande à la marocaine" width="378" height="473">
+        </picture>
+
+        <div class="wrapper">
+            <div class="menu__header">
+                <h1 class="text-box">La note enchantée</h1>
+                <div class="heart-box">
+                    <input type="checkbox" id="toggle" class="visually-hidden">
+                    <label for="toggle"><i class="fa-regular fa-heart control-me" role="button" aria-label="En favoris"></i></label>
+                </div>
+            </div>
+
+            <div class="wrapper-section">
+                <!-- ENTRÉES -->
+                <section class="starter menu-bloc">
+                    <h2>Entrées</h2>
+                    <ul class="card">
+                        <li class="card__menu .card__menu--1">
+                            <input type="checkbox" id="toggle1" class="visually-hidden">
+                            <article class="card-container">
+                                <div class="card__text">
+                                    <h3>Ravioles de foie gras</h3>
+                                    <p>Accompagnés de leur crème à la truffe</p>
+                                </div>
+                                <div class="card__price">
+                                    25€
+                                </div>
+                                <div class="check-box">
+                                    <label for="toggle1"><i class="fa-solid fa-check control-me"></i></label>
+                                </div>
+                            </article>
+                        </li>
+                        <li class="card__menu .card__menu--2">
+                            <input type="checkbox" id="toggle2" class="visually-hidden">
+                            <article class="card-container">
+                                <div class="card__text">
+                                    <h3>Caviar osciètre</h3>
+                                    <p>Sur blini à la farine de blé noir</p>
+                                </div>
+                                <div class="card__price">
+                                    35€
+                                </div>
+                                <div class="check-box">
+                                    <label for="toggle2"><i class="fa-solid fa-check control-me"></i></label>
+                                </div>
+                            </article>
+                        </li>
+                        <li class="card__menu .card__menu--3">
+                            <input type="checkbox" id="toggle3" class="visually-hidden">
+                            <article class="card-container">
+                                <div class="card__text">
+                                    <h3>Homard et espuma de potiron</h3>
+                                    <p>Mariné aux zestes d'orange</p>
+                                </div>
+                                <div class="card__price">
+                                    20€
+                                </div>
+                                <div class="check-box">
+                                    <label for="toggle3"><i class="fa-solid fa-check control-me"></i></label>
+                                </div>
+                            </article>
+                        </li>
+                        <li class="card__menu .card__menu--4">
+                            <input type="checkbox" id="toggle4" class="visually-hidden">
+                            <article class="card-container">
+                                <div class="card__text">
+                                    <h3>Foie gras de canard cuit entier</h3>
+                                    <p>Confiture de figue et pain toasté</p>
+                                </div>
+                                <div class="card__price">
+                                    35€
+                                </div>
+                                <div class="check-box">
+                                    <label for="toggle4"><i class="fa-solid fa-check control-me"></i></label>
+                                </div>
+                            </article>
+                        </li>
+                    </ul>
+                </section>
+                <!-- PLATS -->
+                <section class="main menu-bloc">
+                    <h2>Plats</h2>
+                    <ul class="card">
+                        <li class="card__menu .card__menu--5">
+                            <input type="checkbox" id="toggle5" class="visually-hidden">
+                            <article class="card-container">
+                                <div class="card__text">
+                                    <h3>Noix de coquilles Saint-Jacques</h3>
+                                    <p>Sur lit de purée de céleri-rave</p>
+                                </div>
+                                <div class="card__price">
+                                    40€
+                                </div>
+                                <div class="check-box">
+                                    <label for="toggle5"><i class="fa-solid fa-check control-me"></i></label>
+                                </div>
+                            </article>
+                        </li>
+                        <li class="card__menu .card__menu--6">
+                            <input type="checkbox" id="toggle6" class="visually-hidden">
+                            <article class="card-container">
+                                <div class="card__text">
+                                    <h3>Langoustine poêlée</h3>
+                                    <p>Purée de patate douce</p>
+                                </div>
+                                <div class="card__price">
+                                    35€
+                                </div>
+                                <div class="check-box">
+                                    <label for="toggle6"><i class="fa-solid fa-check control-me"></i></label>
+                                </div>
+                            </article>
+                        </li>
+                        <li class="card__menu .card__menu--7">
+                            <input type="checkbox" id="toggle7" class="visually-hidden">
+                            <article class="card-container">
+                                <div class="card__text">
+                                    <h3>Mijoté de queue de boeuf</h3>
+                                    <p>Et riz sauvage aux zestes de citron</p>
+                                </div>
+                                <div class="card__price">
+                                    44€
+                                </div>
+                                <div class="check-box">
+                                    <label for="toggle7"><i class="fa-solid fa-check control-me"></i></label>
+                                </div>
+                            </article>
+                        </li>
+                    </ul>
+                </section>
+                <!-- DESSERT -->
+                <section class="dessert menu-bloc ">
+                    <h2>Desserts</h2>
+                    <ul class="card">
+                        <li class="card__menu .card__menu--8">
+                            <input type="checkbox" id="toggle8" class="visually-hidden">
+                            <article class="card-container">
+                                <div class="card__text">
+                                    <h3>Macaron noisette et chocolat</h3>
+                                    <p>Glace au caramel brun et sel de Guérande</p>
+                                </div>
+                                <div class="card__price">
+                                    18€
+                                </div>
+                                <div class="check-box">
+                                    <label for="toggle8"><i class="fa-solid fa-check control-me"></i></label>
+                                </div>
+                            </article>
+                        </li>
+                        <li class="card__menu .card__menu--9">
+                            <input type="checkbox" id="toggle9" class="visually-hidden">
+                            <article class="card-container">
+                                <div class="card__text">
+                                    <h3>Baba au rhum revisité</h3>
+                                    <p>Avec son coulis de citron</p>
+                                </div>
+                                <div class="card__price">
+                                    22€
+                                </div>
+                                <div class="check-box">
+                                    <label for="toggle9"><i class="fa-solid fa-check control-me"></i></label>
+                                </div>
+                            </article>
+                        </li>
+                        <li class="card__menu .card__menu--10">
+                            <input type="checkbox" id="toggle10" class="visually-hidden">
+                            <article class="card-container">
+                                <div class="card__text">
+                                    <h3>Tarte au citron meringuée</h3>
+                                    <p>Déstructurée</p>
+                                </div>
+                                <div class="card__price">
+                                    23€
+                                </div>
+                                <div class="check-box">
+                                    <label for="toggle10"><i class="fa-solid fa-check control-me"></i></label>
+                                </div>
+                            </article>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+
+        <button class="cta cta--order" aria-label="Explorer nos restaurants">Commander</button>
+
+    </main>
+    <footer>
+        <div class="logo">ohmyfood</div>
+        <ul>
+            <li><a href="#"><i class="fa fa-utensils"  aria-hidden="true"></i>Proposer un restaurant</a></li>
+            <li><a href="#"><img src="../images/icons/handshake.svg"  aria-hidden="true">Devenir partenaire</a></li>
+            <li><a href="#">Mentions légales</a></li>
+            <li><a href="mailto:">Contact</a></li>
+        </ul>
+    </footer>
+
 </body>
 </html>

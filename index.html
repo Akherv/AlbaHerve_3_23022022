@@ -19,7 +19,7 @@
 
 <body class="loading">
 
-    <div class="loader">
+    <div class="loader" aria-hidden="true">
         <div class="loader__element loader__element--1"></div>
         <div class="loader__element loader__element--2"></div>
         <div class="loader__element loader__element--3"></div>
@@ -44,16 +44,16 @@
             <h2>Fonctionnement</h2>
             <ul class="card">
                 <li class="card__step">
-                        <i class="fa fa-mobile" aria-hidden="true"></i>
-                        <h3>Choisissez un restaurant</h3>
+                    <i class="fa fa-mobile" aria-hidden="true"></i>
+                    <h3>Choisissez un restaurant</h3>
                 </li>
                 <li class="card__step">
-                        <i class="fa fa-list-ul" aria-hidden="true"></i>
-                        <h3>Composez votre menu</h3>
+                    <i class="fa fa-list-ul" aria-hidden="true"></i>
+                    <h3>Composez votre menu</h3>
                 </li>
                 <li class="card__step">
-                        <i class="fa fa-store" aria-hidden="true"></i>
-                        <h3>Dégustez au restaurant</h3>
+                    <i class="fa fa-store" aria-hidden="true"></i>
+                    <h3>Dégustez au restaurant</h3>
                 </li>
             </ul>
         </section>
@@ -63,90 +63,91 @@
             <ul>
                 <li>
                     <article class="card">
-                        <a href="./pages/la-palette-du-gout.html">
+                        <a href="./pages/la-palette-du-gout.html" aria-label="title1">
                             <picture class="card__picture active">
                                 <source media="(max-width: 374px)"
-                                    srcset="./images/restaurants/small/jay-wennington-small.webp 315w"
+                                    srcset="./images/restaurants/small/jay-wennington-small.webp 367w"
                                     type="image/webp">
                                 <source media="(min-width: 375px)" srcset="./images/restaurants/medium/jay-wennington-medium.webp 551w,
                                 ./images/restaurants/large/jay-wennington-large.webp 1101w" type="image/webp">
                                 <source media="(max-width: 374px)"
-                                    srcset="./images/restaurants/small/jay-wennington-small.jpg 315w" type="image/jpg">
+                                    srcset="./images/restaurants/small/jay-wennington-small.jpg 367w" type="image/jpg">
                                 <source media="(min-width: 375px)" srcset="./images/restaurants/medium/jay-wennington-medium.jpg 551w,
                                 ./images/restaurants/large/jay-wennington-large.jpg 1101w" type="image/jpg">
-                                <img src="./images/restaurants/small/jay-wennington.jpg" alt="" width="551"
+                                <img src="./images/restaurants/small/jay-wennington.jpg" alt="Assiette gastronomique de fines tranches de saumon surmontés de salade" width="551"
                                     height="367">
                             </picture>
                         </a>
-                            <div class="card__content">
-                                <div class="text-box">
-                                    <h3>La palette du goût</h3>
-                                    <p>Ménilmontant</p>
-                                </div>
-                                <div class="heart-box">
-                                    <input type="checkbox" id="toggle" class="visually-hidden">
-                                    <label for="toggle"><i class="fa-regular fa-heart control-me"></i></label>
-                                </div>
+                        <div class="card__content">
+                            <div class="text-box">
+                                <h3 class="title1">La palette du goût</h3>
+                                <p>Ménilmontant</p>
                             </div>
+                            <div class="heart-box">
+                                <input type="checkbox" id="toggle" class="visually-hidden">
+                                <label for="toggle"><i class="fa-regular fa-heart control-me" role="button" aria-label="En favoris"></i></label>
+                            </div>
+                        </div>
                     </article>
                 </li>
                 <li>
                     <article class="card">
-                        <a href="./pages/la-note-enchantee.html">
-                        <picture class="card__picture active">
-                            <source media="(max-width: 374px)" srcset="./images/restaurants/small/stil-small.webp 378w"
-                                type="image/webp">
-                            <source media="(min-width: 375px)" srcset="./images/restaurants/medium/stil-medium.webp 756w,
+                        <a href="./pages/la-note-enchantee.html" aria-label="title2">
+                            <picture class="card__picture active">
+                                <source media="(max-width: 374px)"
+                                    srcset="./images/restaurants/small/stil-small.webp 378w" type="image/webp">
+                                <source media="(min-width: 375px)" srcset="./images/restaurants/medium/stil-medium.webp 756w,
                                 ./images/restaurants/large/stil-large.webp 1512w" type="image/webp">
-                            <source media="(max-width: 374px)" srcset="./images/restaurants/small/stil-small.jpg 378w"
-                                type="image/jpg">
-                            <source media="(min-width: 375px)" srcset="./images/restaurants/medium/stil-medium.jpg 756w,
+                                <source media="(max-width: 374px)"
+                                    srcset="./images/restaurants/small/stil-small.jpg 378w" type="image/jpg">
+                                <source media="(min-width: 375px)" srcset="./images/restaurants/medium/stil-medium.jpg 756w,
                                 ./images/restaurants/large/stil-large.jpg 1512w" type="image/jpg">
-                            <img src="./images/restaurants/small/stil-small.jpg" alt="" width="378" height="473">
-                        </picture>
-                    </a>
+                                <img src="./images/restaurants/small/stil-small.jpg" alt="Assiette de boulette de viande à la marocaine" width="378" height="473">
+                            </picture>
+                        </a>
                         <div class="card__content">
                             <div class="text-box">
-                                <h3>La note enchantée</h3>
+                                <h3 class="title2">La note enchantée</h3>
                                 <p>Charonne</p>
                             </div>
                             <div class="heart-box">
                                 <input type="checkbox" id="toggle1" class="visually-hidden">
-                                <label for="toggle1"><i class="fa-regular fa-heart control-me"></i></label>
+                                <label for="toggle1"><i class="fa-regular fa-heart control-me" role="button" aria-label="En favoris"></i></label>
                             </div>
                         </div>
                     </article>
                 </li>
                 <li>
                     <article class="card">
-                        <a href="./pages/a-la-francaise.html">
-                        <picture class="card__picture">
-                            <source media="(max-width: 374px)"
-                                srcset="./images/restaurants/small/toa-heftiba-small.webp 492w" type="image/webp">
-                            <source media="(min-width: 375px)" srcset="./images/restaurants/medium/toa-heftiba-medium.webp 984w,
+                        <a href="./pages/a-la-francaise.html" aria-label="title3">
+                            <picture class="card__picture">
+                                <source media="(max-width: 374px)"
+                                    srcset="./images/restaurants/small/toa-heftiba-small.webp 492w" type="image/webp">
+                                <source media="(min-width: 375px)" srcset="./images/restaurants/medium/toa-heftiba-medium.webp 984w,
                                 ./images/restaurants/large/toa-heftiba-large.webp 1968w" type="image/webp">
-                            <source media="(max-width: 374px)"
-                                srcset="./images/restaurants/small/toa-heftiba-small.jpg 492w" type="image/jpg">
-                            <source media="(min-width: 375px)" srcset="./images/restaurants/medium/toa-heftiba-medium.jpg 984w,
+                                <source media="(max-width: 374px)"
+                                    srcset="./images/restaurants/small/toa-heftiba-small.jpg 492w" type="image/jpg">
+                                <source media="(min-width: 375px)" srcset="./images/restaurants/medium/toa-heftiba-medium.jpg 984w,
                                 ./images/restaurants/large/toa-heftiba-large.jpg 1968w" type="image/jpg">
-                            <img src="./images/restaurants/small/toa-heftiba-small.jpg" alt="" width="492" height="328">
-                        </picture>
-                    </a>
+                                <img src="./images/restaurants/small/toa-heftiba-small.jpg" alt="Assiette de tarte salée agrémentée de verdures" width="492"
+                                    height="328">
+                            </picture>
+                        </a>
                         <div class="card__content">
                             <div class="text-box">
-                                <h3>À la française</h3>
+                                <h3 class="title3">À la française</h3>
                                 <p>Cité Rouge</p>
                             </div>
                             <div class="heart-box">
                                 <input type="checkbox" id="toggle2" class="visually-hidden">
-                                <label for="toggle2"><i class="fa-regular fa-heart control-me"></i></label>
+                                <label for="toggle2"><i class="fa-regular fa-heart control-me" role="button" aria-label="En favoris"></i></label>
                             </div>
                         </div>
                     </article>
                 </li>
                 <li>
                     <article class="card">
-                        <a href="./pages/le-delice-des-sens.html">
+                        <a href="./pages/le-delice-des-sens.html" aria-label="title4">
                             <picture class="card__picture">
                                 <source media="(max-width: 374px)"
                                     srcset="./images/restaurants/small/louis-hansel-shotsoflouis-small.webp 631w"
@@ -159,20 +160,20 @@
                                     type="image/jpg">
                                 <source media="(min-width: 375px)" srcset="./images/restaurants/medium/louis-hansel-shotsoflouis-medium.jpg 1261w,
                                 ./images/restaurants/large/louis-hansel-shotsoflouis-large.jpg 2522w" type="image/jpg">
-                                <img src="./images/restaurants/small/louis-hansel-shotsoflouis-small.jpg" alt=""
+                                <img src="./images/restaurants/small/louis-hansel-shotsoflouis-small.jpg" alt="Assiette longue de style asiatique présentant une tranche de poisson aux légumes"
                                     width="631" height="432">
                             </picture>
                         </a>
-                            <div class="card__content">
-                                <div class="text-box">
-                                    <h3>Le délice des sens</h3>
-                                    <p>Folie-Méricourt</p>
-                                </div>
-                                <div class="heart-box">
-                                    <input type="checkbox" id="toggle3" class="visually-hidden">
-                                    <label for="toggle3"><i class="fa-regular fa-heart control-me"></i></label>
-                                </div>
+                        <div class="card__content">
+                            <div class="text-box">
+                                <h3 class="title4">Le délice des sens</h3>
+                                <p>Folie-Méricourt</p>
                             </div>
+                            <div class="heart-box">
+                                <input type="checkbox" id="toggle3" class="visually-hidden">
+                                <label for="toggle3"><i class="fa-regular fa-heart control-me" role="button" aria-label="En favoris"></i></label>
+                            </div>
+                        </div>
                     </article>
                 </li>
             </ul>
@@ -181,8 +182,8 @@
     <footer>
         <div class="logo">ohmyfood</div>
         <ul>
-            <li><a href="#"><i class="fa fa-utensils"></i>Proposer un restaurant</a></li>
-            <li><a href="#"><img src="./images/icons/handshake.svg">Devenir partenaire</a></li>
+            <li><a href="#"><i class="fa fa-utensils" aria-hidden="true"></i>Proposer un restaurant</a></li>
+            <li><a href="#"><img src="./images/icons/handshake.svg" aria-hidden="true">Devenir partenaire</a></li>
             <li><a href="#">Mentions légales</a></li>
             <li><a href="mailto:">Contact</a></li>
         </ul>

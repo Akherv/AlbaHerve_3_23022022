@@ -1,0 +1,85 @@
+@use "../utils/mixins"as *;
+@use "../base/colors"as *;
+
+@keyframes reveal {
+    0% {
+        z-index: 30;
+        overflow: hidden;
+    }
+
+    99% {
+        z-index: 30;
+        overflow: hidden;
+    }
+
+    100% {
+        z-index: -1;
+        overflow: visible;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+@keyframes invert-rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+
+@keyframes heartfill {
+    0% {
+        background-position: left 0 top 20px;
+    }
+
+    100% {
+        background-position: left 0 top 0px;
+    }
+}
+
+
+@keyframes step-action {
+
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+        @include background-opacity-light($color-primary);
+    }
+}
+
+@keyframes step-action-icon {
+
+    to {
+        color: $color-primary;
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

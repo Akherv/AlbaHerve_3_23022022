@@ -1,6 +1,7 @@
 @use "../base/colors"as *;
 @use "../utils/mixins"as *;
 @use "../utils/placeholders"as *;
+@use "../utils/animations"as *;
 
 
 .cta {
@@ -28,7 +29,7 @@
         font-style: normal;
         content: "\f004";
         font-family: "Font Awesome 5 Free";
-        font-size: 2rem;
+        font-size: 2.5rem;
         font-weight: 400;
         color: $icon-default;
         cursor: pointer;
@@ -37,18 +38,11 @@
             color: transparent;
             font-weight: 900;
             background: linear-gradient($color-secondary, $color-primary);
-            background-clip: text;
+            -webkit-background-clip: text;
             animation: heartfill 1s linear forwards;
     }
 
-            @keyframes heartfill {
-                0% {
-                  background-position: left 0 top 20px;
-                }
-                100% {
-                  background-position: left 0 top 0px;
-                }
-              }
+            
     }
 
     & input {
@@ -65,12 +59,12 @@
 }
 
 .check-box {
-    position: relative;
-    margin-right: -100px;
-    width: 20%;
-    height: 100%;
-    transition: 1s ease-in-out;
-    transition-property: margin-right;
+    position: absolute;
+    margin-right: -80px;
+    width: 80px;
+    height: 70px;
+    right:0;
+    transition: 1s linear;
     & label {
         content: "";
         position: relative;
@@ -78,7 +72,7 @@
         height: 100%;
         top: 0;
         background-color: $color-tertiary;
-        transition: 1s ease-in-out;
+        transition: 1s linear;
         z-index: 1;
         cursor: pointer;
         display: flex;
@@ -98,7 +92,7 @@
             height: 20px;
             padding: 3%;
             border-radius: 50%;
-            transition: 1s ease-in-out;
+            transition: 1s linear;
             z-index: 2;
         }
     }
