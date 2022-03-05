@@ -284,11 +284,11 @@ input[type=checkbox], input[type=radio] {
 @keyframes step-action {
   0% {
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateY(100px);
   }
   100% {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
     background-color: rgba(147, 86, 220, 0.2);
   }
 }
@@ -312,7 +312,6 @@ html {
   scroll-behavior: smooth;
   background-color: #EAEAEA;
   font-size: 62.5%;
-  outline: none !important;
 }
 
 *,
@@ -321,6 +320,13 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+}
+
+:target:before {
+  content: "";
+  display: block;
+  height: 120px;
+  margin: -100px 0 0;
 }
 
 li {
@@ -335,6 +341,10 @@ button {
 a {
   text-decoration: none;
   color: #000000;
+}
+
+a:hover, a:active {
+  color: #99E2d0;
 }
 
 div,
@@ -379,8 +389,8 @@ h3 {
 .loading::before {
   content: "";
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: black;
   top: 0;
   left: 0;
@@ -475,7 +485,6 @@ h3 {
 }
 
 .cta {
-  border: none;
   padding: 1em 2em;
   margin: 2em;
   border-radius: 40px;
@@ -483,15 +492,18 @@ h3 {
   background-image: linear-gradient(#FF79DA, #9356DC);
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
   font-weight: 500;
+  text-align: center;
 }
-.cta:hover {
+.cta:hover, .cta:active {
+  color: #fff;
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.4);
   background-image: linear-gradient(rgba(255, 121, 218, 0.95), rgba(147, 86, 220, 0.95));
 }
-
-.heart-box {
-  width: 20%;
+.cta:active {
+  color: #fff;
+  transform: scale(0.98);
 }
+
 .heart-box label i {
   font-style: normal;
   content: "\f004";
@@ -501,7 +513,7 @@ h3 {
   color: #7E7E7E;
   cursor: pointer;
 }
-.heart-box label i:hover {
+.heart-box label i:hover, .heart-box label i:active {
   color: transparent;
   font-weight: 900;
   background: linear-gradient(#FF79DA, #9356DC);
@@ -525,7 +537,7 @@ h3 {
   width: 80px;
   height: 70px;
   right: 0;
-  transition: 1s linear;
+  transition: 0.5s linear;
 }
 .check-box label {
   content: "";
@@ -534,7 +546,7 @@ h3 {
   height: 100%;
   top: 0;
   background-color: #99E2d0;
-  transition: 1s linear;
+  transition: 0.5s linear;
   z-index: 1;
   cursor: pointer;
   display: flex;
@@ -554,7 +566,7 @@ h3 {
   height: 20px;
   padding: 3%;
   border-radius: 50%;
-  transition: 1s linear;
+  transition: 0.5s linear;
   z-index: 2;
 }
 
@@ -568,11 +580,23 @@ h3 {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  transition: all 0.3s;
+}
+.card li:hover, .card li:active {
+  transform: scale(1.01);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 12px 40px 0 rgba(0, 0, 0, 0.1);
+}
+.card-restaurant {
+  transition: all 0.3s;
+}
+.card-restaurant:hover, .card-restaurant:active {
+  transform: scale(1.01);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 12px 40px 0 rgba(0, 0, 0, 0.1);
 }
 
 .journey .card__step {
   width: clamp(250px, 85vw, 350px);
-  animation: step-action 0.5s ease backwards;
+  animation: step-action 0.3s ease backwards;
 }
 .journey .card__step::before {
   content: "";
@@ -588,7 +612,7 @@ h3 {
 }
 .journey .card__step::after {
   font-size: 1.4rem;
-  font-weight: 400;
+  font-weight: 600;
   position: absolute;
   top: 50%;
   left: 0;
@@ -612,7 +636,7 @@ h3 {
   font-size: 2rem;
   font-weight: 900;
   color: #7E7E7E;
-  animation: step-action-icon 0.5s ease backwards;
+  animation: step-action-icon 0.3s ease backwards;
 }
 .journey .card__step > h3 {
   position: relative;
@@ -627,10 +651,10 @@ h3 {
   left: -40px;
   transform: translate(-50%, -50%);
 }
-.journey .card__step:hover {
+.journey .card__step:hover, .journey .card__step:active {
   background-color: rgba(147, 86, 220, 0.2);
 }
-.journey .card__step:hover i {
+.journey .card__step:hover i, .journey .card__step:active i {
   color: #9356DC;
 }
 .journey .card__step:nth-child(1) {
@@ -653,15 +677,16 @@ h3 {
 }
 @media screen and (min-width: 768px) {
   .journey .card {
-    width: 100vw;
+    width: 90%;
     justify-content: space-around;
   }
   .journey .card__step {
     flex-direction: column-reverse;
     width: 30%;
     max-width: 350px;
-    height: 20vh;
+    height: auto;
     margin-top: 40px;
+    text-align: center;
   }
   .journey .card__step::before {
     content: "";
@@ -730,7 +755,7 @@ h3 {
   flex-direction: row;
 }
 .restaurants .card__content .text-box {
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -822,7 +847,7 @@ h3 {
 }
 .menu .card__menu .card-container .card__price {
   background-color: #FFFFFF;
-  padding-bottom: 18px;
+  padding-bottom: 10px;
   min-height: 70px;
   font-weight: 800;
   display: flex;
@@ -830,15 +855,15 @@ h3 {
   justify-content: center;
   max-width: 50px;
   width: 20%;
-  transition: 1s linear;
+  transition: 0.5s linear;
 }
-.menu .card__menu .card-container:hover .card__price {
+.menu .card__menu .card-container:hover .card__price, .menu .card__menu .card-container:active .card__price {
   margin-right: 80px;
 }
-.menu .card__menu .card-container:hover .check-box > label {
+.menu .card__menu .card-container:hover .check-box > label, .menu .card__menu .card-container:active .check-box > label {
   transform: translateX(-80px);
 }
-.menu .card__menu .card-container:hover .check-box > label i {
+.menu .card__menu .card-container:hover .check-box > label i, .menu .card__menu .card-container:active .check-box > label i {
   transform: rotate(1turn);
   transform-origin: center center;
 }
@@ -962,7 +987,6 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    padding: 10%;
   }
   .hero h1,
 .hero p {
@@ -971,7 +995,7 @@ main {
 }
 
 .journey {
-  padding: 6% 0;
+  padding: 8% 0;
   background-color: #FFFFFF;
   flex-direction: column;
 }
@@ -984,7 +1008,7 @@ main {
 }
 @media screen and (min-width: 768px) {
   .journey {
-    padding: 2%;
+    padding: 2% 0;
   }
   .journey .card {
     display: flex;
@@ -1003,6 +1027,9 @@ main {
   width: 100%;
 }
 @media screen and (min-width: 768px) {
+  .restaurants {
+    padding: 2% 4%;
+  }
   .restaurants > ul {
     width: 100%;
     display: flex;
@@ -1018,9 +1045,12 @@ main {
   align-items: center;
   background-color: #F6F6F6;
 }
+.menu .card__picture {
+  width: 100%;
+}
 .menu .card__picture img {
   object-fit: cover;
-  width: 100vw;
+  width: 100%;
   height: 30vh;
 }
 .menu .wrapper {
@@ -1039,7 +1069,7 @@ main {
 }
 .menu .wrapper .menu__header h1 {
   font-family: shrikhand, cursive;
-  width: 85%;
+  width: 100%;
 }
 .menu .wrapper .menu-bloc {
   padding: 0% 4%;
@@ -1074,7 +1104,7 @@ main {
   .menu .card__picture img {
     object-fit: cover;
     object-position: top;
-    width: 100vw;
+    width: 100%;
     height: 40vh;
   }
   .menu .card__picture .wrapper {
@@ -1085,15 +1115,17 @@ main {
     justify-content: center;
   }
   .menu .card__picture .wrapper .menu-bloc {
-    padding: 2%;
+    padding: 0;
     width: 33%;
   }
   .menu .card__picture .menu__header {
     width: 100%;
+    display: flex;
+    justify-content: space-between;
   }
   .menu .card__picture .menu__header .heart-box {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
   }
   .menu .card__picture .card__menu {
     width: 100%;
@@ -1117,7 +1149,7 @@ main {
     width: 30%;
   }
   .menu .wrapper-section .menu-bloc .card__menu {
-    min-width: 340px;
+    min-width: 330px;
   }
 }
 

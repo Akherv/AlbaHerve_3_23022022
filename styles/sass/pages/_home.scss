@@ -65,7 +65,6 @@ main {
         background-repeat: no-repeat;
         background-size: cover;
         background-attachment: fixed;
-        padding: 10%;
 
         h1,
         p {
@@ -76,7 +75,7 @@ main {
 
 
 .journey {
-    padding: 6% 0;
+    padding: 8% 0;
     background-color: $background-light;
     @extend %flex-center;
     flex-direction: column;
@@ -91,7 +90,7 @@ main {
     }
 
     @include media-min(768px) {
-        padding: 2%;
+        padding: 2% 0;
 
         & .card {
             display: flex;
@@ -116,6 +115,8 @@ main {
     }
 
     @include media-min(768px) {
+
+        padding: 2% 4%;
 
         &>ul {
             width: 100%;

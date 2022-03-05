@@ -5,7 +5,6 @@ html {
     scroll-behavior: smooth;
     background-color: $background-dark;
     font-size: 62.5%;
-    outline: none !important;
 }
 
 *,
@@ -14,6 +13,13 @@ html {
     margin: 0;
     padding: 0;
     box-sizing: inherit;
+}
+
+:target:before {
+    content: "";
+    display: block;
+    height: 120px;
+    margin: -100px 0 0;
 }
 
 li {
@@ -28,6 +34,10 @@ button {
 a {
     text-decoration: none;
     color: $font-default;
+}
+
+a:hover, a:active {
+    color: $color-tertiary;
 }
 
 div,

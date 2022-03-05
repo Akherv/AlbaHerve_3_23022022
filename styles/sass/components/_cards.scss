@@ -5,7 +5,7 @@
 @use "../utils/animations"as *;
 
 .card {
-
+    
     & li {
         padding: 1.8em 2em;
         margin-bottom: 1.5em;
@@ -16,14 +16,31 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
+        transition: all 0.3s;
+
+        &:hover, &:active {
+        transform: scale(1.01);
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 12px 40px 0 rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    &-restaurant{
+        transition: all 0.3s;
+
+        &:hover, &:active {
+        transform: scale(1.01);
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 12px 40px 0 rgba(0, 0, 0, 0.1);
+        }
     }
 }
+
+
 
 .journey .card {
 
     &__step {
         width: clamp(250px, 85vw, 350px);
-        animation: step-action 0.5s ease backwards;
+        animation: step-action 0.3s ease backwards;
 
         &::before {
             content: "";
@@ -37,7 +54,7 @@
 
         &::after {
             font-size: 1.4rem;
-            font-weight: $font-regular;
+            font-weight: $font-medium;
             @include absolute-center(50%, 0, -50%, -50%);
             color: $font-light;
             z-index: 2;
@@ -64,7 +81,7 @@
             font-weight: 900;
             color: $icon-default;
             @extend %flex-center;
-            animation: step-action-icon 0.5s ease backwards;
+            animation: step-action-icon 0.3s ease backwards;
         }
 
         &>h3 {
@@ -79,13 +96,14 @@
             }
         }
 
-        &:hover {
+        &:hover, &:active {
             @include background-opacity-light($color-primary)
         }
 
-        &:hover i {
+        &:hover i, &:active i {
             color: $color-primary;
         }
+
 
 
         &:nth-child(1) {
@@ -115,15 +133,16 @@
     }
 
     @include media-min(768px) {
-        width: 100vw;
+        width: 90%;
         justify-content: space-around;
 
         &__step {
             flex-direction: column-reverse;
             width: 30%;
             max-width: 350px;
-            height: 20vh;
+            height: auto;
             margin-top: 40px;
+            text-align: center;
 
             &::before {
                 content: "";
@@ -198,7 +217,7 @@
         flex-direction: row;
 
         & .text-box {
-            width: 80%;
+            width: 100%;
             display: flex;
             flex-direction: column;
 
@@ -279,7 +298,7 @@
 
                 &__price {
                     background-color: $background-light;
-                    padding-bottom: 18px;
+                    padding-bottom: 10px;
                     min-height: 70px;
                     font-weight: 800;
                     display: flex;
@@ -287,12 +306,12 @@
                     justify-content: center;
                     max-width: 50px;
                     width: 20%;
-                    transition: 1s linear;
+                    transition: 0.5s linear;
                    
                 }
             }
 
-            &:hover {
+            &:hover, &:active {
 
                 & .card__price{
                     margin-right: 80px;

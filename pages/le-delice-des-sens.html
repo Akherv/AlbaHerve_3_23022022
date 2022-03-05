@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,46 +8,52 @@
     <meta name="description" content="Le délice des sens, restaurant coloré, menu terre-mer situé à Montparnasse">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&family=Shrikhand&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&family=Shrikhand&display=swap"
+        rel="stylesheet" />
     <script src="https://kit.fontawesome.com/472662ce71.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../styles/css/style.css">
     <link rel="shortcut icon" href="#" />
     <title>Le délice des sens</title>
 </head>
+
 <body>
+
     <header>
         <nav>
             <a href="../index.html" aria-label="retour à la page d'accueil">
-                <i class="fas fa-arrow-left" aria-label="return home"></i>
+                <i class="fas fa-arrow-left" aria-hidden="true"></i>
             </a>
         </nav>
         <span class="logo">ohmyfood</span>
     </header>
+
     <main class="menu">
+        <!-- IMG ACCUEIL -->
         <picture class="card__picture">
             <source media="(max-width: 374px)"
-                srcset="../images/restaurants/small/louis-hansel-shotsoflouis-small.webp 631w"
+                srcset="../images/restaurants/small/louis-hansel-shotsoflouis-small.webp 631w" sizes="100vw"
                 type="image/webp">
             <source media="(min-width: 375px)" srcset="../images/restaurants/medium/louis-hansel-shotsoflouis-medium.webp 1261w,
-            ../images/restaurants/large/louis-hansel-shotsoflouis-large.webp 2522w"
-                type="image/webp">
+            ../images/restaurants/large/louis-hansel-shotsoflouis-large.webp 2522w" sizes="100vw" type="image/webp">
             <source media="(max-width: 374px)"
-                srcset="../images/restaurants/small/louis-hansel-shotsoflouis-small.jpg 631w"
+                srcset="../images/restaurants/small/louis-hansel-shotsoflouis-small.jpg 631w" sizes="100vw"
                 type="image/jpg">
             <source media="(min-width: 375px)" srcset="../images/restaurants/medium/louis-hansel-shotsoflouis-medium.jpg 1261w,
-            ../images/restaurants/large/louis-hansel-shotsoflouis-large.jpg 2522w" type="image/jpg">
-            <img src="../images/restaurants/small/louis-hansel-shotsoflouis-small.jpg" alt="Assiette longue de style asiatique présentant une tranche de poisson aux légumes"
-                width="631" height="432">
+            ../images/restaurants/large/louis-hansel-shotsoflouis-large.jpg 2522w" sizes="100vw" type="image/jpg">
+            <img src="../images/restaurants/small/louis-hansel-shotsoflouis-small.jpg"
+                alt="Assiette longue de style asiatique présentant une tranche de poisson aux légumes" width="631"
+                height="432">
         </picture>
+        <!-- MENU -->
         <div class="wrapper">
             <div class="menu__header">
                 <h1 class="text-box">Le délice des sens</h1>
                 <div class="heart-box">
                     <input type="checkbox" id="toggle" class="visually-hidden">
-                    <label for="toggle"><i class="fa-regular fa-heart control-me" role="button" aria-label="En favoris"></i></label>
+                    <label for="toggle"><i class="fa-regular fa-heart control-me" role="button"
+                            aria-label="En favoris"></i></label>
                 </div>
             </div>
-
             <div class="wrapper-section">
                 <!-- ENTRÉES -->
                 <section class="starter menu-bloc">
@@ -203,19 +210,20 @@
                 </section>
             </div>
         </div>
-
-        <button class="cta cta--order" aria-label="Explorer nos restaurants">Commander</button>
-
+        <a href="#" class="cta cta--order" role="button">Commander</a>
     </main>
+    
     <footer>
         <div class="logo">ohmyfood</div>
         <ul>
-            <li><a href="#"><i class="fa fa-utensils"  aria-hidden="true"></i>Proposer un restaurant</a></li>
-            <li><a href="#"><img src="../images/icons/handshake.svg"  aria-hidden="true">Devenir partenaire</a></li>
+            <li><a href="#"><i class="fa fa-utensils" aria-hidden="true"></i>Proposer un restaurant</a></li>
+            <li><a href="#"><img src="../images/icons/handshake.svg" aria-hidden="true" alt="">Devenir partenaire</a>
+            </li>
             <li><a href="#">Mentions légales</a></li>
             <li><a href="mailto:">Contact</a></li>
         </ul>
     </footer>
 
 </body>
+
 </html>
