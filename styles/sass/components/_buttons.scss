@@ -45,6 +45,7 @@
             font-weight: 900;
             background: linear-gradient($color-secondary, $color-primary);
             -webkit-background-clip: text;
+            background-clip: text;
             animation: heartfill 1s linear forwards;
     }
 
@@ -59,6 +60,7 @@
             font-weight: 900;
             background: linear-gradient($color-secondary, $color-primary);
             -webkit-background-clip: text;
+            background-clip: text;
             background-size: cover;
         }
     }

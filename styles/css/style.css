@@ -518,6 +518,7 @@ h3 {
   font-weight: 900;
   background: linear-gradient(#FF79DA, #9356DC);
   -webkit-background-clip: text;
+  background-clip: text;
   animation: heartfill 1s linear forwards;
 }
 .heart-box input {
@@ -528,6 +529,7 @@ h3 {
   font-weight: 900;
   background: linear-gradient(#FF79DA, #9356DC);
   -webkit-background-clip: text;
+  background-clip: text;
   background-size: cover;
 }
 
