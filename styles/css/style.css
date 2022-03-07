@@ -551,7 +551,7 @@ h3 {
 }
 .heart-box input {
   position: absolute;
-  width: 40%;
+  width: 100%;
   height: 40%;
   top: 100%;
   opacity: 0;
