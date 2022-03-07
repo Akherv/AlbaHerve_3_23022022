@@ -31,8 +31,7 @@ main {
     @include media-min(768px) {
         position: absolute;
         padding: 1%;
-        width: 20%;
-        background-color: $color-tertiary;
+        width: 100%;
         color: #000;
 
         &>p::before {

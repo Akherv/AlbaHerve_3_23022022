@@ -1,6 +1,7 @@
 @use "../utils/mixins"as *;
 @use "../base/colors"as *;
 
+
 @keyframes reveal {
     0% {
         z-index: 30;
@@ -50,26 +51,6 @@
     }
 }
 
-@keyframes check-box {
-    to {
-        margin-right: 80px;
-    }
-}
-
-@keyframes check {
-    to {
-        transform: translateX(-80px);
-    }
-}
-
-@keyframes check-icon {
-
-    to {
-        transform: rotate(1turn);
-        transform-origin: center center;
-    }
-}
-
 @keyframes step-action {
 
     0% {
@@ -102,3 +83,12 @@
         transform: translateY(0);
     }
 }
+
+
+
+// @media (prefers-reduced-motion: reduce) {
+//     *:not(.loading,.loader, .loader__element) {
+//     animation: none!important;
+//     transition: none!important;
+//     }
+//   }
