@@ -50,6 +50,25 @@
     }
 }
 
+@keyframes check-box {
+    to {
+        margin-right: 80px;
+    }
+}
+
+@keyframes check {
+    to {
+        transform: translateX(-80px);
+    }
+}
+
+@keyframes check-icon {
+
+    to {
+        transform: rotate(1turn);
+        transform-origin: center center;
+    }
+}
 
 @keyframes step-action {
 

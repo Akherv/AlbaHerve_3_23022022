@@ -38,7 +38,7 @@
         <section class="hero">
             <h1>Réservez le menu qui vous convient</h1>
             <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
-            <a href="#restaurants" class="cta" role="button" >Explorer nos restaurants</a>
+            <a href="#restaurants" class="cta" role="button" tabindex="0">Explorer nos restaurants</a>
         </section>
         <!-- JOURNEY -->
         <section class="journey">
@@ -46,15 +46,15 @@
             <ul class="card">
                 <li class="card__step">
                     <i class="fa fa-mobile" aria-hidden="true"></i>
-                    <h3>Choisissez un restaurant</h3>
+                    <h3 aria-label="Choisissez un restaurant">Choisissez un restaurant</h3>
                 </li>
                 <li class="card__step">
                     <i class="fa fa-list-ul" aria-hidden="true"></i>
-                    <h3>Composez votre menu</h3>
+                    <h3 aria-label="Composez votre menu">Composez votre menu</h3>
                 </li>
                 <li class="card__step">
                     <i class="fa fa-store" aria-hidden="true"></i>
-                    <h3>Dégustez au restaurant</h3>
+                    <h3 aria-label="Dégustez au restaurant">Dégustez au restaurant</h3>
                 </li>
             </ul>
         </section>
@@ -88,10 +88,9 @@
                                 <h3 id="title1">La palette du goût</h3>
                                 <p>Ménilmontant</p>
                             </div>
-                            <div class="heart-box">
-                                <input type="checkbox" id="toggle" class="visually-hidden">
-                                <label for="toggle"><i class="fa-regular fa-heart control-me" role="button"
-                                        aria-label="En favoris"></i></label>
+                            <div class="heart-box custom-button" role="switch" aria-checked="false" aria-label="Ajouter" tabindex="0">
+                                <input type="checkbox" id="toggle" class="visually-hidden" aria-role="presentation" aria-hidden="true">
+                                <label for="toggle" aria-role="presentation" aria-hidden="true"><i class="fa-regular fa-heart control-me" aria-role="presentation" aria-hidden="true"></i></label>
                             </div>
                         </div>
                     </article>
@@ -119,9 +118,9 @@
                                 <h3 id="title2">La note enchantée</h3>
                                 <p>Charonne</p>
                             </div>
-                            <div class="heart-box" role="button" aria-label="Ajouter en favoris" tabindex="0">
-                                <input type="checkbox" id="toggle1" class="visually-hidden">
-                                <label for="toggle1" aria-hidden="true"><i class="fa-regular fa-heart control-me" aria-hidden="true"></i></label>
+                            <div class="heart-box custom-button" role="switch" aria-checked="false" aria-label="Ajouter" tabindex="0">
+                                <input type="checkbox" id="toggle1" class="visually-hidden" aria-role="presentation" aria-hidden="true">
+                                <label for="toggle1" aria-role="presentation" aria-hidden="true"><i class="fa-regular fa-heart control-me" aria-role="presentation" aria-hidden="true"></i></label>
                             </div>
                         </div>
                     </article>
@@ -150,9 +149,9 @@
                                 <h3 id="title3">À la française</h3>
                                 <p>Cité Rouge</p>
                             </div>
-                            <div class="heart-box" role="button" aria-label="Ajouter en favoris" tabindex="0">
-                                <input type="checkbox" id="toggle2" class="visually-hidden">
-                                <label for="toggle2" aria-hidden="true"><i class="fa-regular fa-heart control-me" aria-hidden="true"></i></label>
+                            <div class="heart-box custom-button" role="switch" aria-checked="false" aria-label="Ajouter" tabindex="0">
+                                <input type="checkbox" id="toggle2" class="visually-hidden" aria-role="presentation" aria-hidden="true">
+                                <label for="toggle2" aria-role="presentation" aria-hidden="true"><i class="fa-regular fa-heart control-me" aria-role="presentation" aria-hidden="true"></i></label>
                             </div>
                         </div>
                     </article>
@@ -183,9 +182,9 @@
                                 <h3 id="title4">Le délice des sens</h3>
                                 <p>Folie-Méricourt</p>
                             </div>
-                            <div class="heart-box" role="button" aria-label="Ajouter en favoris" tabindex="0">
-                                <input type="checkbox" id="toggle3" class="visually-hidden">
-                                <label for="toggle3" aria-hidden="true"><i class="fa-regular fa-heart control-me" aria-hidden="true"></i></label>
+                            <div class="heart-box custom-button" role="switch" aria-checked="false" aria-label="Ajouter" tabindex="0">
+                                <input type="checkbox" id="toggle3" class="visually-hidden" aria-role="presentation" aria-hidden="true">
+                                <label for="toggle3" aria-role="presentation" aria-hidden="true"><i class="fa-regular fa-heart control-me" aria-role="presentation" aria-hidden="true"></i></label>
                             </div>
                         </div>
                     </article>

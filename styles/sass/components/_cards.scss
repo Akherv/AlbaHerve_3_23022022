@@ -5,7 +5,7 @@
 @use "../utils/animations"as *;
 
 .card {
-    
+
     & li {
         padding: 1.8em 2em;
         margin-bottom: 1.5em;
@@ -18,18 +18,18 @@
         align-items: center;
         transition: all 0.3s;
 
-        &:hover, &:active {
-        transform: scale(1.01);
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 12px 40px 0 rgba(0, 0, 0, 0.1);
+        &:hover {
+            transform: scale(1.01);
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 12px 40px 0 rgba(0, 0, 0, 0.1);
         }
     }
 
-    &-restaurant{
+    &-restaurant {
         transition: all 0.3s;
 
-        &:hover, &:active {
-        transform: scale(1.01);
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 12px 40px 0 rgba(0, 0, 0, 0.1);
+        &:hover {
+            transform: scale(1.01);
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 12px 40px 0 rgba(0, 0, 0, 0.1);
         }
     }
 }
@@ -43,6 +43,14 @@
         animation: step-action 0.3s ease backwards;
 
         &::before {
+            font-size: 1.4rem;
+            font-weight: $font-medium;
+            @include absolute-center(50%, 0, -50%, -50%);
+            color: $font-light;
+            z-index: 2;
+        }
+
+        &::after {
             content: "";
             @include absolute-center(50%, 0, -50%, -50%);
             width: 25px;
@@ -52,23 +60,17 @@
             z-index: 1;
         }
 
-        &::after {
-            font-size: 1.4rem;
-            font-weight: $font-medium;
-            @include absolute-center(50%, 0, -50%, -50%);
-            color: $font-light;
-            z-index: 2;
-        }
 
-        &:nth-of-type(1)::after {
+
+        &:nth-of-type(1)::before {
             content: "1";
         }
 
-        &:nth-of-type(2)::after {
+        &:nth-of-type(2)::before {
             content: "2";
         }
 
-        &:nth-of-type(3)::after {
+        &:nth-of-type(3)::before {
             content: "3";
         }
 
@@ -96,11 +98,11 @@
             }
         }
 
-        &:hover, &:active {
+        &:hover {
             @include background-opacity-light($color-primary)
         }
 
-        &:hover i, &:active i {
+        &:hover i {
             color: $color-primary;
         }
 
@@ -145,15 +147,14 @@
             text-align: center;
 
             &::before {
+                @include absolute-center(0, 50%, -50%, -50%);
+            }
+
+            &::after {
                 content: "";
                 @include absolute-center(0, 50%, -50%, -50%);
                 width: 50px;
                 height: 50px;
-            }
-
-            &::after {
-                font-size: 1.4rem;
-                @include absolute-center(0, 50%, -50%, -50%);
             }
 
             &>i {
@@ -263,7 +264,7 @@
             }
         }
 
-       
+
 
         & .card-container {
             max-width: 350px;
@@ -290,7 +291,7 @@
 
                     & p {
 
-                    white-space: nowrap;
+                        white-space: nowrap;
                         overflow: hidden;
                         text-overflow: ellipsis;
                     }
@@ -307,47 +308,52 @@
                     max-width: 50px;
                     width: 20%;
                     transition: 0.5s linear;
-                   
-                }
-            }
 
-            &:hover, &:active {
-
-                & .card__price{
-                    margin-right: 80px;
-                    }
-
-                    & .check-box {
-
-                        &>label {
-                           transform: translateX(-80px);
-                       & i {
-                           transform: rotate(1turn);
-                           transform-origin: center center;
-                       }
-                   }
                 }
             }
         }
 
         & input {
-            display: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            z-index: 1;
 
-                &:checked~.card-container {
+            &:checked+.card-container {
 
-                    & .card__price {
-                        margin-right: 80px;
-                    }
-
-                    & .check-box>label {
-                        transform: translateX(-80px);
-                    }
-
-                    & .check-box>label i {
-                        transform: translateX(0%);
-                        transform-origin: center center;
-                    }
+                & .card__price {
+                    margin-right: 80px;
                 }
+
+                & .check-box>label {
+                    transform: translateX(-80px);
+                }
+
+                & .check-box>label i {
+                    transform: translateX(0%);
+                    transform-origin: center center;
+                }
+            }
+
+
+            &:not(:checked) :hover+.card-container {
+
+                & .card__price {
+                    margin-right: 80px;
+                }
+
+                & .check-box>label {
+                    transform: translateX(-80px);
+                }
+
+                & .check-box>label i {
+                    transform: translateX(0%);
+                    transform-origin: center center;
+                }
+            }
         }
     }
 }

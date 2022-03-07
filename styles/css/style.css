@@ -281,6 +281,22 @@ input[type=checkbox], input[type=radio] {
     background-position: left 0 top 0px;
   }
 }
+@keyframes check-box {
+  to {
+    margin-right: 80px;
+  }
+}
+@keyframes check {
+  to {
+    transform: translateX(-80px);
+  }
+}
+@keyframes check-icon {
+  to {
+    transform: rotate(1turn);
+    transform-origin: center center;
+  }
+}
 @keyframes step-action {
   0% {
     opacity: 0;
@@ -424,7 +440,10 @@ h3 {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  border-top: 10px solid #9356DC;
+  border-top: 5px solid #9356DC;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
 }
 .loader__element--1::after {
   content: "";
@@ -447,7 +466,10 @@ h3 {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border-top: 10px solid #FF79DA;
+  border-top: 5px solid #FF79DA;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
 }
 .loader__element--2::after {
   content: "";
@@ -470,7 +492,10 @@ h3 {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border-top: 10px solid #99E2d0;
+  border-top: 5px solid #99E2d0;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
 }
 .loader__element--3::after {
   content: "";
@@ -486,7 +511,7 @@ h3 {
 
 .cta {
   padding: 1em 2em;
-  margin: 2em;
+  margin: 2em 0;
   border-radius: 40px;
   color: #FFFFFF;
   background-image: linear-gradient(#FF79DA, #9356DC);
@@ -494,16 +519,19 @@ h3 {
   font-weight: 500;
   text-align: center;
 }
-.cta:hover, .cta:active {
+.cta:hover, .cta:focus, .cta:active {
   color: #fff;
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.4);
   background-image: linear-gradient(rgba(255, 121, 218, 0.95), rgba(147, 86, 220, 0.95));
-}
-.cta:active {
   color: #fff;
   transform: scale(0.98);
 }
 
+.heart-box {
+  height: fit-content;
+  position: relative;
+  z-index: 2;
+}
 .heart-box label i {
   font-style: normal;
   content: "\f004";
@@ -513,16 +541,20 @@ h3 {
   color: #7E7E7E;
   cursor: pointer;
 }
-.heart-box label i:hover, .heart-box label i:active {
+.heart-box label i:hover {
   color: transparent;
   font-weight: 900;
   background: linear-gradient(#FF79DA, #9356DC);
   -webkit-background-clip: text;
   background-clip: text;
-  animation: heartfill 1s linear forwards;
+  animation: heartfill 1s linear backwards;
 }
 .heart-box input {
-  display: none;
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  top: 100%;
+  opacity: 0;
 }
 .heart-box input:checked ~ label i {
   color: transparent;
@@ -537,9 +569,8 @@ h3 {
   position: absolute;
   margin-right: -80px;
   width: 80px;
-  height: 70px;
+  height: 100%;
   right: 0;
-  transition: 0.5s linear;
 }
 .check-box label {
   content: "";
@@ -584,14 +615,14 @@ h3 {
   align-items: center;
   transition: all 0.3s;
 }
-.card li:hover, .card li:active {
+.card li:hover {
   transform: scale(1.01);
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 12px 40px 0 rgba(0, 0, 0, 0.1);
 }
 .card-restaurant {
   transition: all 0.3s;
 }
-.card-restaurant:hover, .card-restaurant:active {
+.card-restaurant:hover {
   transform: scale(1.01);
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 12px 40px 0 rgba(0, 0, 0, 0.1);
 }
@@ -601,6 +632,16 @@ h3 {
   animation: step-action 0.3s ease backwards;
 }
 .journey .card__step::before {
+  font-size: 1.4rem;
+  font-weight: 600;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  color: #FFFFFF;
+  z-index: 2;
+}
+.journey .card__step::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -612,23 +653,13 @@ h3 {
   border-radius: 50%;
   z-index: 1;
 }
-.journey .card__step::after {
-  font-size: 1.4rem;
-  font-weight: 600;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translate(-50%, -50%);
-  color: #FFFFFF;
-  z-index: 2;
-}
-.journey .card__step:nth-of-type(1)::after {
+.journey .card__step:nth-of-type(1)::before {
   content: "1";
 }
-.journey .card__step:nth-of-type(2)::after {
+.journey .card__step:nth-of-type(2)::before {
   content: "2";
 }
-.journey .card__step:nth-of-type(3)::after {
+.journey .card__step:nth-of-type(3)::before {
   content: "3";
 }
 .journey .card__step > i {
@@ -653,10 +684,10 @@ h3 {
   left: -40px;
   transform: translate(-50%, -50%);
 }
-.journey .card__step:hover, .journey .card__step:active {
+.journey .card__step:hover {
   background-color: rgba(147, 86, 220, 0.2);
 }
-.journey .card__step:hover i, .journey .card__step:active i {
+.journey .card__step:hover i {
   color: #9356DC;
 }
 .journey .card__step:nth-child(1) {
@@ -691,6 +722,12 @@ h3 {
     text-align: center;
   }
   .journey .card__step::before {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .journey .card__step::after {
     content: "";
     position: absolute;
     top: 0;
@@ -698,13 +735,6 @@ h3 {
     transform: translate(-50%, -50%);
     width: 50px;
     height: 50px;
-  }
-  .journey .card__step::after {
-    font-size: 1.4rem;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
   .journey .card__step > i {
     width: 40px;
@@ -859,33 +889,39 @@ h3 {
   width: 20%;
   transition: 0.5s linear;
 }
-.menu .card__menu .card-container:hover .card__price, .menu .card__menu .card-container:active .card__price {
+.menu .card__menu input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+.menu .card__menu input:checked + .card-container .card__price {
   margin-right: 80px;
 }
-.menu .card__menu .card-container:hover .check-box > label, .menu .card__menu .card-container:active .check-box > label {
+.menu .card__menu input:checked + .card-container .check-box > label {
   transform: translateX(-80px);
 }
-.menu .card__menu .card-container:hover .check-box > label i, .menu .card__menu .card-container:active .check-box > label i {
-  transform: rotate(1turn);
+.menu .card__menu input:checked + .card-container .check-box > label i {
+  transform: translateX(0%);
   transform-origin: center center;
 }
-.menu .card__menu input {
-  display: none;
-}
-.menu .card__menu input:checked ~ .card-container .card__price {
+.menu .card__menu input:not(:checked) :hover + .card-container .card__price {
   margin-right: 80px;
 }
-.menu .card__menu input:checked ~ .card-container .check-box > label {
+.menu .card__menu input:not(:checked) :hover + .card-container .check-box > label {
   transform: translateX(-80px);
 }
-.menu .card__menu input:checked ~ .card-container .check-box > label i {
+.menu .card__menu input:not(:checked) :hover + .card-container .check-box > label i {
   transform: translateX(0%);
   transform-origin: center center;
 }
 
 header {
   width: 100%;
-  height: 70px;
+  height: 60px;
   position: fixed;
   top: 0;
   background-color: #FFFFFF;
@@ -936,7 +972,7 @@ footer ul i, footer ul img {
 }
 
 main {
-  margin-top: 70px;
+  margin-top: 60px;
 }
 
 .location {
@@ -1068,6 +1104,7 @@ main {
   padding: 4% 4% 0;
   width: 100%;
   display: flex;
+  align-items: center;
 }
 .menu .wrapper .menu__header h1 {
   font-family: shrikhand, cursive;
