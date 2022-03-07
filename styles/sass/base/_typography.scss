@@ -1,6 +1,8 @@
 // Font-family
-$font-primary: 'Roboto', sans-serif;
-$font-secondary: 'Shrikhand', cursive;
+$font-primary: 'Roboto',
+sans-serif;
+$font-secondary: 'Shrikhand',
+cursive;
 
 
 // Font-weight
@@ -17,17 +19,17 @@ body {
 }
 
 h1 {
-    font-size:2.8rem;
+    font-size: 2.8rem;
     font-weight: $font-black;
 }
 
 h2 {
-    font-size:2.4rem;
+    font-size: 2.4rem;
     font-weight: $font-bold;
 }
 
 h3 {
-    font-size:1.6rem;
+    font-size: 1.6rem;
     font-weight: $font-medium;
     margin: 0;
 }

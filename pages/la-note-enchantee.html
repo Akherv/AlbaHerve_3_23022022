@@ -20,7 +20,7 @@
 
     <header class="scheme">
         <nav>
-            <a href="../index.html" aria-label="retour à la page d'accueil">
+            <a href="../index.html" role="button" aria-label="retour à la page d'accueil">
                 <i class="fas fa-arrow-left" aria-hidden="true"></i>
             </a>
         </nav>
@@ -45,11 +45,11 @@
         <div class="wrapper">
             <div class="menu__header scheme">
                 <h1 class="text-box">La note enchantée</h1>
-                <div class="heart-box animation" role="switch" aria-checked="false" tabindex="0" aria-labelledby="title1">
-                    <input type="checkbox" id="toggle" class="visually-hidden animation" aria-hidden="true">
-                    <label for="toggle" aria-hidden="true" class="animation">
-                        <i class="fa-regular fa-heart control-me animation" aria-hidden="true"></i>
-                        <span id="title1" class="visually-hidden">En favoris</span>
+                <div class="heart-box" role="switch" aria-checked="false" tabindex="0" aria-labelledby="title">
+                    <input type="checkbox" id="toggle" class="visually-hidden" aria-labelledby="title">
+                    <label for="toggle" aria-hidden="true">
+                        <i class="fa-regular fa-heart control-me" aria-hidden="true"></i>
+                        <span id="title" class="visually-hidden">En favoris</span>
                     </label>
                 </div>
             </div>
@@ -59,7 +59,7 @@
                     <h2>Entrées</h2>
                     <ul class="card">
                         <li class="card__menu .card__menu--1">
-                            <input type="checkbox" id="toggle1" class="visually-hidden" aria-hidden="true">
+                            <input type="checkbox" id="toggle1" class="visually-hidden" aria-labelledby="title1">
                             <article class="card-container">
                                 <div class="card__text">
                                     <h3>Ravioles de foie gras</h3>
@@ -68,16 +68,16 @@
                                 <div class="card__price">
                                     25€
                                 </div>
-                                <div class="check-box">
-                                    <label for="toggle1" aria-hidden="true">
-                                        <i class="fa-solid fa-check control-me" aria-hidden="true"></i>
-                                        <span class="visually-hidden">Ajouter</span>
+                                <div class="check-box" role="switch" aria-checked="false" tabindex="0" aria-labelledby="title1">
+                                    <label for="toggle1">
+                                        <i class="fa-solid fa-check control-me" aria-hidden="true" tabindex="-1"></i>
+                                        <span id="title1" class="visually-hidden">Ajouter</span>
                                     </label>
                                 </div>
                             </article>
                         </li>
                         <li class="card__menu .card__menu--2">
-                            <input type="checkbox" id="toggle2" class="visually-hidden" aria-hidden="true">
+                            <input type="checkbox" id="toggle2" class="visually-hidden" aria-labelledby="title2">
                             <article class="card-container">
                                 <div class="card__text">
                                     <h3>Caviar osciètre</h3>
@@ -86,16 +86,16 @@
                                 <div class="card__price">
                                     35€
                                 </div>
-                                <div class="check-box">
-                                    <label for="toggle2" aria-hidden="true">
-                                        <i class="fa-solid fa-check control-me" aria-hidden="true"></i>
-                                        <span class="visually-hidden">Ajouter</span>
+                                <div class="check-box" role="switch" aria-checked="false" tabindex="0" aria-labelledby="title2">
+                                    <label for="toggle2">
+                                        <i class="fa-solid fa-check control-me" aria-hidden="true" tabindex="-1"></i>
+                                        <span id="title2" class="visually-hidden">Ajouter</span>
                                     </label>
                                 </div>
                             </article>
                         </li>
                         <li class="card__menu .card__menu--3">
-                            <input type="checkbox" id="toggle3" class="visually-hidden" aria-hidden="true">
+                            <input type="checkbox" id="toggle3" class="visually-hidden" aria-labelledby="title3">
                             <article class="card-container">
                                 <div class="card__text">
                                     <h3>Homard et espuma de potiron</h3>
@@ -104,16 +104,16 @@
                                 <div class="card__price">
                                     20€
                                 </div>
-                                <div class="check-box">
-                                    <label for="toggle3" aria-hidden="true">
-                                        <i class="fa-solid fa-check control-me" aria-hidden="true"></i>
-                                        <span class="visually-hidden">Ajouter</span>
+                                <div class="check-box" role="switch" aria-checked="false" tabindex="0" aria-labelledby="title3">
+                                    <label for="toggle3">
+                                        <i class="fa-solid fa-check control-me" aria-hidden="true" tabindex="-1"></i>
+                                        <span id="title3" class="visually-hidden">Ajouter</span>
                                     </label>
                                 </div>
                             </article>
                         </li>
                         <li class="card__menu .card__menu--4">
-                            <input type="checkbox" id="toggle4" class="visually-hidden" aria-hidden="true">
+                            <input type="checkbox" id="toggle4" class="visually-hidden" aria-labelledby="title4">
                             <article class="card-container">
                                 <div class="card__text">
                                     <h3>Foie gras de canard cuit entier</h3>
@@ -122,10 +122,10 @@
                                 <div class="card__price">
                                     35€
                                 </div>
-                                <div class="check-box">
-                                    <label for="toggle4" aria-hidden="true">
-                                        <i class="fa-solid fa-check control-me" aria-hidden="true"></i>
-                                        <span class="visually-hidden">Ajouter</span>
+                                <div class="check-box" role="switch" aria-checked="false" tabindex="0" aria-labelledby="title4">
+                                    <label for="toggle4">
+                                        <i class="fa-solid fa-check control-me" aria-hidden="true" tabindex="-1"></i>
+                                        <span id="title4" class="visually-hidden">Ajouter</span>
                                     </label>
                                 </div>
                             </article>
@@ -137,7 +137,7 @@
                     <h2>Plats</h2>
                     <ul class="card">
                         <li class="card__menu .card__menu--5">
-                            <input type="checkbox" id="toggle5" class="visually-hidden" aria-hidden="true">
+                            <input type="checkbox" id="toggle5" class="visually-hidden" aria-labelledby="title5">
                             <article class="card-container">
                                 <div class="card__text">
                                     <h3>Noix de coquilles Saint-Jacques</h3>
@@ -146,16 +146,16 @@
                                 <div class="card__price">
                                     40€
                                 </div>
-                                <div class="check-box">
-                                    <label for="toggle5" aria-hidden="true">
-                                        <i class="fa-solid fa-check control-me" aria-hidden="true"></i>
-                                        <span class="visually-hidden">Ajouter</span>
+                                <div class="check-box" role="switch" aria-checked="false" tabindex="0" aria-labelledby="title5">
+                                    <label for="toggle5">
+                                        <i class="fa-solid fa-check control-me" aria-hidden="true" tabindex="-1"></i>
+                                        <span id="title5" class="visually-hidden">Ajouter</span>
                                     </label>
                                 </div>
                             </article>
                         </li>
                         <li class="card__menu .card__menu--6">
-                            <input type="checkbox" id="toggle6" class="visually-hidden" aria-hidden="true">
+                            <input type="checkbox" id="toggle6" class="visually-hidden" aria-labelledby="title6">
                             <article class="card-container">
                                 <div class="card__text">
                                     <h3>Langoustine poêlée</h3>
@@ -164,16 +164,16 @@
                                 <div class="card__price">
                                     35€
                                 </div>
-                                <div class="check-box">
-                                    <label for="toggle6" aria-hidden="true">
-                                        <i class="fa-solid fa-check control-me" aria-hidden="true"></i>
-                                        <span class="visually-hidden">Ajouter</span>
+                                <div class="check-box" role="switch" aria-checked="false" tabindex="0" aria-labelledby="title6">
+                                    <label for="toggle6">
+                                        <i class="fa-solid fa-check control-me" aria-hidden="true" tabindex="-1"></i>
+                                        <span id="title6" class="visually-hidden">Ajouter</span>
                                     </label>
                                 </div>
                             </article>
                         </li>
                         <li class="card__menu .card__menu--7">
-                            <input type="checkbox" id="toggle7" class="visually-hidden" aria-hidden="true">
+                            <input type="checkbox" id="toggle7" class="visually-hidden" aria-labelledby="title7">
                             <article class="card-container">
                                 <div class="card__text">
                                     <h3>Mijoté de queue de boeuf</h3>
@@ -182,10 +182,10 @@
                                 <div class="card__price">
                                     44€
                                 </div>
-                                <div class="check-box">
-                                    <label for="toggle7" aria-hidden="true">
-                                        <i class="fa-solid fa-check control-me" aria-hidden="true"></i>
-                                        <span class="visually-hidden">Ajouter</span>
+                                <div class="check-box" role="switch" aria-checked="false" tabindex="0" aria-labelledby="title7">
+                                    <label for="toggle7">
+                                        <i class="fa-solid fa-check control-me" aria-hidden="true" tabindex="-1"></i>
+                                        <span id="title7" class="visually-hidden">Ajouter</span>
                                     </label>
                                 </div>
                             </article>
@@ -197,7 +197,7 @@
                     <h2>Desserts</h2>
                     <ul class="card">
                         <li class="card__menu .card__menu--8">
-                            <input type="checkbox" id="toggle8" class="visually-hidden" aria-hidden="true">
+                            <input type="checkbox" id="toggle8" class="visually-hidden" aria-labelledby="title8">
                             <article class="card-container">
                                 <div class="card__text">
                                     <h3>Macaron noisette et chocolat</h3>
@@ -206,16 +206,16 @@
                                 <div class="card__price">
                                     18€
                                 </div>
-                                <div class="check-box">
-                                    <label for="toggle8" aria-hidden="true">
-                                        <i class="fa-solid fa-check control-me" aria-hidden="true"></i>
-                                        <span class="visually-hidden">Ajouter</span>
+                                <div class="check-box" role="switch" aria-checked="false" tabindex="0" aria-labelledby="title8">
+                                    <label for="toggle8">
+                                        <i class="fa-solid fa-check control-me" aria-hidden="true" tabindex="-1"></i>
+                                        <span id="title8" class="visually-hidden">Ajouter</span>
                                     </label>
                                 </div>
                             </article>
                         </li>
                         <li class="card__menu .card__menu--9">
-                            <input type="checkbox" id="toggle9" class="visually-hidden" aria-hidden="true">
+                            <input type="checkbox" id="toggle9" class="visually-hidden" aria-labelledby="title9">
                             <article class="card-container">
                                 <div class="card__text">
                                     <h3>Baba au rhum revisité</h3>
@@ -224,16 +224,16 @@
                                 <div class="card__price">
                                     22€
                                 </div>
-                                <div class="check-box">
-                                    <label for="toggle9" aria-hidden="true">
-                                        <i class="fa-solid fa-check control-me" aria-hidden="true"></i>
-                                        <span class="visually-hidden">Ajouter</span>
+                                <div class="check-box" role="switch" aria-checked="false" tabindex="0" aria-labelledby="title9">
+                                    <label for="toggle9">
+                                        <i class="fa-solid fa-check control-me" aria-hidden="true" tabindex="-1"></i>
+                                        <span id="title9" class="visually-hidden">Ajouter</span>
                                     </label>
                                 </div>
                             </article>
                         </li>
                         <li class="card__menu .card__menu--10">
-                            <input type="checkbox" id="toggle10" class="visually-hidden" aria-hidden="true">
+                            <input type="checkbox" id="toggle10" class="visually-hidden" aria-labelledby="title10">
                             <article class="card-container">
                                 <div class="card__text">
                                     <h3>Tarte au citron meringuée</h3>
@@ -242,10 +242,10 @@
                                 <div class="card__price">
                                     23€
                                 </div>
-                                <div class="check-box">
-                                    <label for="toggle10" aria-hidden="true">
-                                        <i class="fa-solid fa-check control-me" aria-hidden="true"></i>
-                                        <span class="visually-hidden">Ajouter</span>
+                                <div class="check-box" role="switch" aria-checked="false" tabindex="0" aria-labelledby="title10">
+                                    <label for="toggle10">
+                                        <i class="fa-solid fa-check control-me" aria-hidden="true" tabindex="-1"></i>
+                                        <span id="title10" class="visually-hidden">Ajouter</span>
                                     </label>
                                 </div>
                             </article>

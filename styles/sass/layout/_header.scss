@@ -1,7 +1,7 @@
-@use "../base/colors" as *;
-@use "../base/typography" as *;
-@use "../utils/mixins" as *;
-@use "../utils/placeholders" as *;
+@use "../base/colors"as *;
+@use "../base/typography"as *;
+@use "../utils/mixins"as *;
+@use "../utils/placeholders"as *;
 
 
 
@@ -12,7 +12,7 @@ header {
     top: 0;
     background-color: $background-light;
     @extend %flex-center;
-    @include shadow(#000000,0.2);
+    @include shadow(#000000, 0.2);
     z-index: 10;
 }
 
@@ -20,12 +20,12 @@ nav {
     display: block;
     font-size: 2rem;
     position: absolute;
-    top:50%;
-    left:30px;
+    top: 50%;
+    left: 30px;
     transform: translateY(-50%);
 }
 
 .logo {
-    font-family:$font-secondary ;
-    font-size: 3.2rem ;
+    font-family: $font-secondary;
+    font-size: 3.2rem;
 }

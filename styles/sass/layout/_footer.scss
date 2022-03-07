@@ -1,7 +1,7 @@
-@use "../base/colors" as *;
-@use "../base/typography" as *;
-@use "../utils/mixins" as *;
-@use "../utils/placeholders" as *;
+@use "../base/colors"as *;
+@use "../base/typography"as *;
+@use "../utils/mixins"as *;
+@use "../utils/placeholders"as *;
 
 
 footer {
@@ -29,7 +29,8 @@ footer {
         flex-direction: column;
         justify-content: space-around;
 
-        & i, & img {
+        & i,
+        & img {
             width: 15px;
             height: 15px;
             margin-right: 10px;

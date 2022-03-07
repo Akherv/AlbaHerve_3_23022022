@@ -343,7 +343,8 @@ a {
   color: #000000;
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
   color: #99E2d0;
 }
 

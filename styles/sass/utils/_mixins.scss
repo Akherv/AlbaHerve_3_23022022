@@ -12,12 +12,12 @@
 }
 
 @mixin background-opacity-light($backgroundColor) {
-background-color: rgba($backgroundColor,0.2);
+    background-color: rgba($backgroundColor, 0.2);
 }
 
 @mixin color-opacity-dark($color) {
     color: darken($color, 40%);
-    }
+}
 
 
 // RESPONSIVE
