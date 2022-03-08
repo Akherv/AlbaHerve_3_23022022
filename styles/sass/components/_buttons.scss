@@ -27,7 +27,6 @@
 
 
 .heart-box {
-    padding: 0.2em;
     height: fit-content;
     @extend %flex-center;
     position: relative;
@@ -41,6 +40,7 @@
         font-weight: 400;
         color: $icon-default;
         cursor: pointer;
+        padding: .2em;
 
         &:hover {
             color: transparent;
@@ -50,16 +50,11 @@
             background-clip: text;
             animation: heartfill 1s linear backwards;
         }
-
-
     }
 
     & input {
         position: absolute;
-        width: 100%;
-        height: 10%;
-        bottom: 35%;
-        opacity: 0;
+        z-index: -1;
 
         &:checked~label i {
             color: transparent;
@@ -115,4 +110,5 @@
 .visually-hidden {
     opacity: 0;
     font-size: 0;
+    display: block;
 }
