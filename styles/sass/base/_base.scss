@@ -1,4 +1,5 @@
 @use "./colors"as *;
+@use "../utils/mixins"as *;
 
 html {
     box-sizing: border-box;
@@ -27,19 +28,67 @@ li {
 }
 
 a,
-button {
+button,
+input[type="checkbox"] {
     cursor: pointer;
 }
 
 a {
-    display: block;
+    display: inline-block;
     text-decoration: none;
     color: $font-default;
 }
 
 a:hover,
-a:active {
+a:focus {
     color: $color-tertiary;
+}
+
+a:active {
+    @include color-opacity-dark($color-tertiary);
+}
+
+.cta:focus {
+    outline: none;
+    border: 4px solid $color-tertiary;
+    border-radius: 40px;
+}                               
+
+.card-restaurant a:focus {
+    border: 4px solid $color-tertiary;
+    border-radius: 15px 15px 0 0;
+    overflow: hidden;
+}                               
+
+
+
+input {
+    -webkit-appearance: none;
+}
+
+
+.card__menu input:focus:not(:focus-visible),
+.heart-box input:focus:not(:focus-visible) {
+    border: 0;
+}
+
+
+.card__menu input:focus-visible,
+.heart-box input:focus-visible {
+    outline: none;
+    border: 6px solid $color-tertiary;
+}
+
+.card__menu input:focus-visible {
+    border-radius: 15px;
+}
+
+.check-box:focus {
+    transform: translateX(0);
+}
+
+.check-box:focus {
+    transform: translateX(0);
 }
 
 div,
@@ -49,4 +98,14 @@ button,
 select,
 a {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+@supports selector(div:focus-visible) {
+    div:focus:not(:focus-visible) {
+        outline: 0;
+    }
+
+    div:focus-visible {
+        outline: 6px solid $color-tertiary;
+    }
 }
