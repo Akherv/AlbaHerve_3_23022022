@@ -34,9 +34,13 @@ input[type="checkbox"] {
 }
 
 a {
-    display: inline-block;
+    display: block;
     text-decoration: none;
     color: $font-default;
+}
+
+footer a {
+    display: inline-block;
 }
 
 a:hover,
