@@ -1,11 +1,12 @@
 @use "../base/colors"as *;
+@use "../utils/mixins"as *;
 @use "../utils/placeholders"as *;
 @use "../utils/animations"as *;
 
 
 .loading {
     overflow: hidden;
-    animation: reveal 1.3s ease-out forwards;
+    animation: reveal-container 1s ease-out forwards;
 
     &::before {
         content: "";
@@ -16,30 +17,24 @@
         top: 0;
         left: 0;
         z-index: 40;
-        overflow: hidden;
-        animation: reveal 1s ease-out forwards;
+        animation: reveal-element 1s ease-out forwards;
     }
 }
 
 .loader {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     height: 200px;
     width: 200px;
+    @include absolute-center(50%, 50%, -50%, -50%);
     z-index: 50;
     @extend %flex-center;
-    animation: reveal 1s ease-out forwards;
+    animation: reveal-element 1s ease-out forwards;
 
     &__element {
         position: absolute;
-        background-color: transparent;
 
         &--1 {
             width: 100px;
             height: 100px;
-            @extend %flex-center;
             animation: rotate 0.5s linear 2;
 
             &::before {
@@ -48,10 +43,7 @@
                 width: 100px;
                 height: 100px;
                 border-radius: 50%;
-                border-top: 5px solid $color-primary;
-                border-bottom: 5px solid transparent;
-                border-left: 5px solid transparent;
-                border-right: 5px solid transparent;
+                @include loader-border($color-primary);
             }
 
             &::after {
@@ -77,19 +69,16 @@
                 width: 50px;
                 height: 50px;
                 border-radius: 50%;
-                border-top: 5px solid $color-secondary;
-                border-bottom: 5px solid transparent;
-                border-left: 5px solid transparent;
-                border-right: 5px solid transparent;
+                @include loader-border($color-secondary);
             }
 
             &::after {
                 content: "";
                 position: absolute;
-                bottom: 50px;
-                left: 10px;
                 width: 5px;
                 height: 5px;
+                bottom: 50px;
+                left: 10px;
                 border-radius: 50%;
                 background-color: $color-tertiary;
             }
@@ -107,21 +96,16 @@
                 width: 50px;
                 height: 50px;
                 border-radius: 50%;
-                border-top: 5px solid $color-tertiary;
-                border-bottom: 5px solid transparent;
-                border-left: 5px solid transparent;
-                border-right: 5px solid transparent;
+                @include loader-border($color-tertiary);
             }
 
             &::after {
                 content: "";
                 position: absolute;
-                top: 50%;
-                left: 50%;
+                @include absolute-center(50%, 50%, -50%, -50%);
                 width: 20px;
                 height: 20px;
                 border-radius: 50%;
-                transform: translate(-50%, -50%);
                 background-color: $color-primary;
             }
         }

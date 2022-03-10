@@ -2,20 +2,27 @@
 @use "../base/colors"as *;
 
 
-@keyframes reveal {
+@keyframes reveal-container {
     0% {
-        z-index: 30;
         overflow: hidden;
     }
 
     99% {
-        z-index: 30;
         overflow: hidden;
     }
 
     100% {
-        z-index: -1;
         overflow: visible;
+    }
+}
+
+@keyframes reveal-element {
+    99% {
+        z-index: 40;
+    }
+
+    100% {
+        z-index: -1;
     }
 }
 
@@ -29,7 +36,6 @@
     }
 }
 
-
 @keyframes invert-rotate {
     0% {
         transform: rotate(0);
@@ -40,28 +46,13 @@
     }
 }
 
-
 @keyframes heartfill {
     0% {
         background-position: left 0 top 20px;
     }
 
     100% {
-        background-position: left 0 top 0px;
-    }
-}
-
-@keyframes step-action {
-
-    0% {
-        opacity: 0;
-        transform: translateY(100px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-        @include background-opacity-light($color-primary);
+        background-position: left 0 top 0;
     }
 }
 
@@ -85,10 +76,19 @@
 }
 
 
+//A décocher pour mise en place de la préférence - réduction d'animations
 
 // @media (prefers-reduced-motion: reduce) {
-//     *:not(.loading,.loader, .loader__element) {
+//     * {
 //     animation: none!important;
 //     transition: none!important;
 //     }
-//   }
+
+//     .loading {
+//         overflow: auto!important; 
+//     }
+
+//     .loader, .loader__element {
+//         display: none;
+//     }
+//  }

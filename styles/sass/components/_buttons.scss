@@ -84,15 +84,16 @@
     width: 80px;
     height: 100%;
     right: 0;
+    transition: 0.5s linear;
 
     & label {
         content: "";
-        position: relative;
+        position: absolute;
         max-width: 100px;
         height: 100%;
         top: 0;
         background-color: $color-tertiary;
-        transition: 0.5s linear;
+        transition: transform 0.5s linear;
         z-index: 1;
         cursor: pointer;
         display: flex;
@@ -117,6 +118,8 @@
             z-index: 2;
         }
     }
+
+    
 }
 
 .visually-hidden-checkbox {

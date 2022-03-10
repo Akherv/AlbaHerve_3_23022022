@@ -4,7 +4,7 @@
 html {
     box-sizing: border-box;
     scroll-behavior: smooth;
-    background-color: $background-dark;
+    background-color: $background-dark-heavy;
     font-size: 62.5%;
 }
 
@@ -20,7 +20,7 @@ html {
     content: "";
     display: block;
     height: 120px;
-    margin: -100px 0 0;
+    margin-top: -100px;
 }
 
 li {
@@ -48,51 +48,16 @@ a:focus {
     color: $color-tertiary;
 }
 
+a:hover .handshake{
+    filter: invert(30%) sepia(37%) saturate(276%) hue-rotate(112deg) brightness(100%) contrast(91%);
+}
+
 a:active {
     @include color-opacity-dark($color-tertiary);
 }
 
-.cta:focus {
-    outline: none;
-    border: 4px solid $color-tertiary;
-    border-radius: 40px;
-}                               
-
-.card-restaurant a:focus {
-    border: 4px solid $color-tertiary;
-    border-radius: 15px 15px 0 0;
-    overflow: hidden;
-}                               
-
-
-
 input {
     -webkit-appearance: none;
-}
-
-
-.card__menu input:focus:not(:focus-visible),
-.heart-box input:focus:not(:focus-visible) {
-    border: 0;
-}
-
-
-.card__menu input:focus-visible,
-.heart-box input:focus-visible {
-    outline: none;
-    border: 6px solid $color-tertiary;
-}
-
-.card__menu input:focus-visible {
-    border-radius: 15px;
-}
-
-.check-box:focus {
-    transform: translateX(0);
-}
-
-.check-box:focus {
-    transform: translateX(0);
 }
 
 div,
@@ -111,5 +76,30 @@ a {
 
     div:focus-visible {
         outline: 6px solid $color-tertiary;
+    }
+}
+
+@supports selector(input:focus-visible) {
+    .card__menu input:focus-visible,
+    .heart-box input:focus-visible {
+        outline: none;
+        border: 6px solid $color-tertiary;
+    }
+
+    .card__menu input:focus-visible {
+        border-radius: 15px;
+    }
+}
+
+@supports selector(a:focus-visible) {
+    .card-restaurant a:focus-visible {
+        border: 4px solid $color-tertiary;
+        border-radius: 15px 15px 0 0;
+        overflow: hidden;
+    } 
+    .cta:focus-visible {
+        outline: none;
+        border: 4px solid $color-tertiary;
+        border-radius: 40px;
     }
 }

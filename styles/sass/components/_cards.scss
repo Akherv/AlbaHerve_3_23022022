@@ -134,7 +134,7 @@
 
     }
 
-    @include media-min(768px) {
+    @include media-min($tablet) {
         width: 90%;
         justify-content: space-around;
 
@@ -229,7 +229,7 @@
         }
     }
 
-    @include media-min(768px) {
+    @include media-min($tablet) {
         margin: 20px;
     }
 }
@@ -279,7 +279,6 @@
                 &__text {
                     display: flex;
                     flex-direction: column;
-                    flex: 2 2 20em;
                     overflow: hidden;
                     text-overflow: ellipsis;
                     min-width: 60%;
@@ -315,48 +314,61 @@
 
                 }
             }
-        }
 
-        & input {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1;
 
-            &:checked+.card-container {
+            & input{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                z-index: 1;
 
-                & .card__price {
-                    margin-right: 80px;
+                &:checked {
+
+                    & ~ .card__price {
+                        margin-right: 80px;
+                    }
+
+                    & ~ .check-box {
+                        transform: translateX(0);
+                    }
+
+                    & ~ .check-box>label i {
+                        transform: rotate(1turn);
+                        transform-origin: center center;
+                    }
                 }
+                
 
-                & .check-box>label {
-                    transform: translateX(-80px);
-                }
 
-                & .check-box>label i {
-                    transform: rotate(1turn);
-                    transform-origin: center center;
-                }
+
+
+                // &:not(:checked) {
+                //     & ~ .card__price {
+                //         margin-right: 0;
+                //     }
+
+                //     & ~ .check-box>label {
+                //         transform: translateX(0);
+                //     }
+
+                //     & ~ .check-box>label i {
+                //         transform: rotate(-1turn);
+                //         transform-origin: center center;
+                //     }
+                // }
+
+
+
             }
 
+            // &:focus-within  {
 
-            &:not(:checked) :hover+.card-container {
-
-                & .card__price {
-                    margin-right: 0;
-                }
-
-                & .check-box>label {
-                    transform: translateX(0);
-                }
-
-                & .check-box>label i {
-                    transform: rotate(-1turn);
-                    transform-origin: center center;
-                }
-            }
+            //      & .card__price {
+            //             margin-right: 80px;
+            //         }
+            // }
         }
     }
 }

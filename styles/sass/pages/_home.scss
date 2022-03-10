@@ -8,14 +8,13 @@ main {
     margin-top: (60px);
 }
 
-
 .location {
     padding: 4% 3%;
-    background-color: $background-dark;
-    @extend %flex-center;
     font-weight: $font-regular;
-
-    &>p {
+    background-color: $background-dark-light;
+    @extend %flex-center;
+  
+    & > p {
         position: relative;
 
         &::before {
@@ -23,23 +22,14 @@ main {
             font-family: "Font Awesome 5 Free";
             font-size: 2rem;
             font-weight: 900;
-            color: $icon-default-dark;
             @include absolute-center(50%, -25%, -50%, -50%);
         }
     }
 
-    @include media-min(768px) {
-        position: absolute;
+    @include media-min($tablet) {
         padding: 1%;
-        width: 100%;
-        color: #000;
-
-        &>p::before {
-            color: #000;
-        }
     }
 }
-
 
 .hero {
     @extend %wrapper;
@@ -48,17 +38,13 @@ main {
     flex-direction: column;
     text-align: center;
 
-    h1 {
-        padding: 0 15%;
-    }
-
     p {
         font-size: 1.8rem;
         padding: 0 5%;
     }
 
 
-    @include media-min(768px) {
+    @include media-min($tablet) {
         background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(255, 255, 255, 0.5)),
             url(../../images/restaurants/medium/jay-wennington-medium.jpg);
         background-repeat: no-repeat;
@@ -72,7 +58,6 @@ main {
     }
 }
 
-
 .journey {
     padding: 8% 0;
     background-color: $background-light;
@@ -85,19 +70,17 @@ main {
     }
 
     & ul {
-        margin: 10px 10px 10px 20px;
+        margin: 10px 10px 20px;
     }
 
-    @include media-min(768px) {
+    @include media-min($tablet) {
         padding: 2% 0;
 
         & .card {
             display: flex;
-            flex-direction: row
         }
     }
 }
-
 
 .restaurants {
     @extend %wrapper;
@@ -109,18 +92,11 @@ main {
         align-self: flex-start;
     }
 
-    &>li {
-        width: 100%;
-    }
-
-    @include media-min(768px) {
-
+    @include media-min($tablet) {
         padding: 2% 4%;
 
-        &>ul {
-            width: 100%;
+        & > ul {
             display: flex;
-            flex-direction: row;
             justify-content: space-around;
             flex-wrap: wrap;
         }

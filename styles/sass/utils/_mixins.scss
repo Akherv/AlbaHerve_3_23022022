@@ -1,14 +1,22 @@
 @use "../base/colors"as *;
 
-@mixin shadow ($color, $opacity) {
-    box-shadow: 2px 4px 10px rgba($color, $opacity);
-}
 
 @mixin absolute-center ($top, $left, $translateX, $translateY) {
     position: absolute;
     top: $top;
     left: $left;
     transform: translate($translateX, $translateY);
+}
+
+@mixin loader-border ($color) {
+    border-top: 5px solid $color;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
+
+@mixin shadow ($color, $opacity) {
+    box-shadow: 2px 4px 10px rgba($color, $opacity);
 }
 
 @mixin background-opacity-light($backgroundColor) {
@@ -21,14 +29,24 @@
 
 
 // RESPONSIVE
+$tablet: 768px;
+$desktop: 1024px;
 
-$mediaTablet: 375px;
-$mediaDesktop: 375px;
+@mixin media-min ($device) {
 
-@mixin media-min ($_min-width) {
-    @media screen and (min-width: $_min-width) {
-        & {
-            @content;
+    @if $device==$tablet {
+        @media screen and (min-width: $device) {
+            & {
+                @content;
+            }
+        }
+    }
+
+    @else if $device==$desktop {
+        @media screen and (min-width: $device) {
+            & {
+                @content;
+            }
         }
     }
 }

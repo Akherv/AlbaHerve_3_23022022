@@ -8,13 +8,12 @@ footer {
     @extend %wrapper;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    background-color: $background-footer;
+    background-color: $background-dark-heavy;
 
     & .logo {
         font-size: 2rem;
-        font-weight: 300;
-        margin: 0 0 10px 0;
+        font-weight: $font-thin;
+        margin-bottom: 10px;
         color: $font-light;
     }
 
@@ -23,7 +22,6 @@ footer {
     }
 
     & ul {
-        width: 100%;
         min-height: 100px;
         display: flex;
         flex-direction: column;

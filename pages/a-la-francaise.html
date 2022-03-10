@@ -46,10 +46,10 @@
             <div class="menu__header scheme">
                 <h1 class="text-box">À la française</h1>
                 <div class="heart-box">
-                    <input type="checkbox" id="toggle" tabindex="0">
+                    <input type="checkbox" id="toggle" aria-labelledby="title">
                     <label for="toggle">
                         <i class="fa-regular fa-heart" aria-hidden="true"></i>
-                        <span class="visually-hidden-checkbox">Ajouter aux favoris</span>
+                        <span id="title" class="visually-hidden-checkbox" aria-hidden="true">Ajouter aux favoris</span>
                     </label>
                 </div>
             </div>
@@ -59,8 +59,8 @@
                     <h2>Entrées</h2>
                     <ul class="card">
                         <li class="card__menu .card__menu--1">
-                            <input type="checkbox" id="toggle1" tabindex="0">
                             <article class="card-container">
+                                <input type="checkbox" id="toggle1" aria-labelledby="title1">
                                 <div class="card__text">
                                     <h3>Tartare de poulpe acidulé</h3>
                                     <p>Aux zests d'orange</p>
@@ -71,15 +71,14 @@
                                 <div class="check-box">
                                     <label for="toggle1">
                                         <i class="fa-solid fa-check" aria-hidden="true"></i>
-                                        <span class="visually-hidden">Ajouter tartare de poulpe acidulé aux zests
-                                            d'oranges - 25€</span>
+                                        <span id="title1" class="visually-hidden" aria-hidden="true">Ajouter au menu</span>
                                     </label>
                                 </div>
                             </article>
                         </li>
                         <li class="card__menu .card__menu--2">
-                            <input type="checkbox" id="toggle2" tabindex="0">
                             <article class="card-container">
+                                <input type="checkbox" id="toggle2" aria-labelledby="title2">
                                 <div class="card__text">
                                     <h3>Velouté de légumes d'antan</h3>
                                     <p>Carotte, panais, topinambour</p>
@@ -90,15 +89,14 @@
                                 <div class="check-box">
                                     <label for="toggle2">
                                         <i class="fa-solid fa-check" aria-hidden="true"></i>
-                                        <span class="visually-hidden">Ajouter Velouté de légumes d'antan - Carotte,
-                                            panais, topinambour - 35€</span>
+                                        <span id="title2" class="visually-hidden" aria-hidden="true">Ajouter au menu</span>
                                     </label>
                                 </div>
                             </article>
                         </li>
                         <li class="card__menu .card__menu--3">
-                            <input type="checkbox" id="toggle3" tabindex="0">
                             <article class="card-container">
+                                <input type="checkbox" id="toggle3" aria-labelledby="title3">
                                 <div class="card__text">
                                     <h3>Soupe à l'oignon</h3>
                                     <p>Revisitée</p>
@@ -109,7 +107,7 @@
                                 <div class="check-box">
                                     <label for="toggle3">
                                         <i class="fa-solid fa-check" aria-hidden="true"></i>
-                                        <span class="visually-hidden">Ajouter Soupe à l'oignon - Revisitée - 20€</span>
+                                        <span id="title3" class="visually-hidden" aria-hidden="true">Ajouter au menu</span>
                                     </label>
                                 </div>
                             </article>
@@ -121,8 +119,8 @@
                     <h2>Plats</h2>
                     <ul class="card">
                         <li class="card__menu .card__menu--4">
-                            <input type="checkbox" id="toggle4" tabindex="0">
                             <article class="card-container">
+                                <input type="checkbox" id="toggle4" aria-labelledby="title4">
                                 <div class="card__text">
                                     <h3>Coquilles Saint-Jacques</h3>
                                     <p>Accompagnées d'une purée de panais</p>
@@ -133,15 +131,14 @@
                                 <div class="check-box">
                                     <label for="toggle4">
                                         <i class="fa-solid fa-check" aria-hidden="true"></i>
-                                        <span class="visually-hidden">Ajouter Coquilles Saint-Jacques accompagnées d'une
-                                            purée de panais - 40€</span>
+                                        <span id="title4" class="visually-hidden" aria-hidden="true">Ajouter au menu</span>
                                     </label>
                                 </div>
                             </article>
                         </li>
                         <li class="card__menu .card__menu--5">
-                            <input type="checkbox" id="toggle5" tabindex="0">
                             <article class="card-container">
+                                <input type="checkbox" id="toggle5" aria-labelledby="title5">
                                 <div class="card__text">
                                     <h3>Magret de canard</h3>
                                     <p>Et parmentier de pommes de terre</p>
@@ -152,15 +149,14 @@
                                 <div class="check-box">
                                     <label for="toggle5">
                                         <i class="fa-solid fa-check" aria-hidden="true"></i>
-                                        <span class="visually-hidden">Ajouter Magret de canard et parmentier de pommes
-                                            de terre - 35€ </span>
+                                        <span id="title5" class="visually-hidden" aria-hidden="true">Ajouter au menu</span>
                                     </label>
                                 </div>
                             </article>
                         </li>
                         <li class="card__menu .card__menu--6">
-                            <input type="checkbox" id="toggle6" tabindex="0">
                             <article class="card-container">
+                                <input type="checkbox" id="toggle6" aria-labelledby="title6">
                                 <div class="card__text">
                                     <h3>Pigeonneau d’Ille-et-Vilaine</h3>
                                     <p>Sur son lit de gnocchis aux légumes</p>
@@ -171,8 +167,7 @@
                                 <div class="check-box">
                                     <label for="toggle6">
                                         <i class="fa-solid fa-check" aria-hidden="true"></i>
-                                        <span class="visually-hidden">Ajouter Pigeonneau d’Ille-et-Vilaine sur son lit
-                                            de gnocchis aux légumes - 44€</span>
+                                        <span id="title6" class="visually-hidden" aria-hidden="true">Ajouter au menu</span>
                                     </label>
                                 </div>
                             </article>
@@ -184,8 +179,8 @@
                     <h2>Desserts</h2>
                     <ul class="card">
                         <li class="card__menu .card__menu--7">
-                            <input type="checkbox" id="toggle7" tabindex="0">
                             <article class="card-container">
+                                <input type="checkbox" id="toggle7" aria-labelledby="title7">
                                 <div class="card__text">
                                     <h3>Pétales de violettes glacés</h3>
                                     <p>Et purée de noisettes</p>
@@ -196,15 +191,14 @@
                                 <div class="check-box">
                                     <label for="toggle7">
                                         <i class="fa-solid fa-check" aria-hidden="true"></i>
-                                        <span class="visually-hidden">Ajouter Pétales de violettes glacés et purée de
-                                            noisettes - 18€</span>
+                                        <span id="title7" class="visually-hidden" aria-hidden="true">Ajouter au menu</span>
                                     </label>
                                 </div>
                             </article>
                         </li>
                         <li class="card__menu .card__menu--8">
-                            <input type="checkbox" id="toggle8" tabindex="0">
                             <article class="card-container">
+                                <input type="checkbox" id="toggle8" aria-labelledby="title8">
                                 <div class="card__text">
                                     <h3>Fondant au chocolat</h3>
                                     <p>Revisité</p>
@@ -215,15 +209,14 @@
                                 <div class="check-box">
                                     <label for="toggle8">
                                         <i class="fa-solid fa-check" aria-hidden="true"></i>
-                                        <span class="visually-hidden">Ajouter Fondant au chocolat - Revisité -
-                                            25€</span>
+                                        <span id="title8" class="visually-hidden" aria-hidden="true">Ajouter au menu</span>
                                     </label>
                                 </div>
                             </article>
                         </li>
                         <li class="card__menu .card__menu--9">
-                            <input type="checkbox" id="toggle9" tabindex="0">
                             <article class="card-container">
+                                <input type="checkbox" id="toggle9" aria-labelledby="title9">
                                 <div class="card__text">
                                     <h3>Millefeuille croustillant</h3>
                                     <p>Myrtilles et pâte d’amande</p>
@@ -234,8 +227,7 @@
                                 <div class="check-box">
                                     <label for="toggle9">
                                         <i class="fa-solid fa-check" aria-hidden="true"></i>
-                                        <span class="visually-hidden">Ajouter Millefeuille croustillant - Myrtilles et
-                                            pâte d’amande - 23€</span>
+                                        <span id="title9" class="visually-hidden" aria-hidden="true">Ajouter au menu</span>
                                     </label>
                                 </div>
                             </article>
@@ -244,7 +236,7 @@
                 </section>
             </div>
         </div>
-        <a href="#" class="cta cta--order" role="button">Commander</a>
+        <a href="#" class="cta cta--order" role="button" aria-label="Commander le menu choisi">Commander</a>
     </main>
 
     <footer>

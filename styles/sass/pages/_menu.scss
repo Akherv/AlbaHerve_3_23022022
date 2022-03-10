@@ -75,7 +75,7 @@
         margin: 0 0 60px;
     }
 
-    @include media-min(768px) {
+    @include media-min($tablet) {
         background-color: $background-medium;
 
         & .card__picture {
@@ -118,7 +118,7 @@
         }
     }
 
-    @include media-min(1024px) {
+    @include media-min($desktop) {
         background-color: $background-medium;
 
         & .card__picture img {
