@@ -8,12 +8,16 @@ main {
     margin-top: (60px);
 }
 
+/*=============================================
+=                   location                 =
+=============================================*/
+
 .location {
     padding: 4% 3%;
     font-weight: $font-regular;
     background-color: $background-dark-light;
     @extend %flex-center;
-  
+
     & > p {
         position: relative;
 
@@ -26,17 +30,25 @@ main {
         }
     }
 
-    @include media-min($tablet) {
+    @include media-min ($tablet) {
         padding: 1%;
     }
 }
 
+/*=============================================
+=                    hero                    =
+=============================================*/
+
 .hero {
-    @extend %wrapper;
+    @extend %menu__wrapper;
     background-color: $background-medium;
     @extend %flex-center;
     flex-direction: column;
     text-align: center;
+
+    h1 {
+        padding: 0 10%;
+    }
 
     p {
         font-size: 1.8rem;
@@ -58,6 +70,10 @@ main {
     }
 }
 
+/*=============================================
+=                  journey                   =
+=============================================*/
+
 .journey {
     padding: 8% 0;
     background-color: $background-light;
@@ -69,21 +85,23 @@ main {
         align-self: flex-start;
     }
 
-    & ul {
-        margin: 10px 10px 20px;
-    }
-
-    @include media-min($tablet) {
+    @include media-min ($tablet) {
         padding: 2% 0;
 
         & .card {
             display: flex;
+            width: 90%;
+            justify-content: space-around;
         }
     }
 }
 
+/*=============================================
+=                 restaurants                 =
+=============================================*/
+
 .restaurants {
-    @extend %wrapper;
+    @extend %menu__wrapper;
     @extend %flex-center;
     flex-direction: column;
     background-color: $background-medium;
@@ -92,7 +110,7 @@ main {
         align-self: flex-start;
     }
 
-    @include media-min($tablet) {
+    @include media-min ($tablet) {
         padding: 2% 4%;
 
         & > ul {

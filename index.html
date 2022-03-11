@@ -44,15 +44,15 @@
         <section class="journey scheme-card">
             <h2>Fonctionnement</h2>
             <ul class="card">
-                <li class="card__step scheme-card">
+                <li class="card-journey scheme-card">
                     <i class="fa fa-mobile" aria-hidden="true"></i>
                     <h3>Choisissez un restaurant</h3>
                 </li>
-                <li class="card__step scheme-card">
+                <li class="card-journey scheme-card">
                     <i class="fa fa-list-ul" aria-hidden="true"></i>
                     <h3>Composez votre menu</h3>
                 </li>
-                <li class="card__step scheme-card">
+                <li class="card-journey scheme-card">
                     <i class="fa fa-store" aria-hidden="true"></i>
                     <h3>Dégustez au restaurant</h3>
                 </li>
@@ -61,11 +61,11 @@
         <!-- RESTAURANTS -->
         <section id="restaurants" class="restaurants scheme">
             <h2>Restaurants</h2>
-            <ul>
-                <li>
-                    <article class="card card-restaurant">
+            <ul class="card">
+                <li class="card-restaurant">
+                    <article>
                         <a href="./pages/la-palette-du-gout.html" aria-label="Page du restaurant - La palette du goût">
-                            <picture class="card__picture active">
+                            <picture class="card-restaurant__picture active">
                                 <source media="(max-width: 374px)"
                                     srcset="./images/restaurants/small/jay-wennington-small.webp 367w" sizes="100vw"
                                     type="image/webp">
@@ -83,25 +83,26 @@
                                     width="551" height="367">
                             </picture>
                         </a>
-                        <div class="card__content">
+                        <div class="card-restaurant__content">
                             <div class="text-box">
                                 <h3>La palette du goût</h3>
                                 <p>Ménilmontant</p>
                             </div>
-                            <div class="heart-box">
-                                <input type="checkbox" id="toggle1" tabindex="0">
-                                <label for="toggle1">
+                            <div class="heartbox">
+                                <input type="checkbox" id="toggle" aria-labelledby="title">
+                                <label for="toggle">
                                     <i class="fa-regular fa-heart" aria-hidden="true"></i>
-                                    <span class="visually-hidden-checkbox">Ajouter aux favoris</span>
+                                    <span id="title" class="visually-hidden-heartbox" aria-hidden="true">Ajouter aux
+                                        favoris</span>
                                 </label>
                             </div>
                         </div>
                     </article>
                 </li>
-                <li>
-                    <article class="card card-restaurant">
+                <li class="card-restaurant">
+                    <article>
                         <a href="./pages/la-note-enchantee.html" aria-label="Page du restaurant - La note enchanté">
-                            <picture class="card__picture active">
+                            <picture class="card-restaurant__picture active">
                                 <source media="(max-width: 374px)"
                                     srcset="./images/restaurants/small/stil-small.webp 378w" sizes="100vw"
                                     type="image/webp">
@@ -116,25 +117,26 @@
                                     alt="Assiette de boulette de viande à la marocaine" width="378" height="473">
                             </picture>
                         </a>
-                        <div class="card__content">
+                        <div class="card-restaurant__content">
                             <div class="text-box">
                                 <h3>La note enchantée</h3>
                                 <p>Charonne</p>
                             </div>
-                            <div class="heart-box">
-                                <input type="checkbox" id="toggle2" tabindex="0">
-                                <label for="toggle2">
+                            <div class="heartbox">
+                                <input type="checkbox" id="toggle1" aria-labelledby="title1">
+                                <label for="toggle1">
                                     <i class="fa-regular fa-heart" aria-hidden="true"></i>
-                                    <span class="visually-hidden-checkbox">Ajouter aux favoris</span>
+                                    <span id="title1" class="visually-hidden-heartbox" aria-hidden="true">Ajouter aux
+                                        favoris</span>
                                 </label>
                             </div>
                         </div>
                     </article>
                 </li>
-                <li>
-                    <article class="card card-restaurant">
+                <li class="card-restaurant">
+                    <article>
                         <a href="./pages/a-la-francaise.html" aria-label="Page du restaurant - À la française">
-                            <picture class="card__picture">
+                            <picture class="card-restaurant__picture">
                                 <source media="(max-width: 374px)"
                                     srcset="./images/restaurants/small/toa-heftiba-small.webp 492w" sizes="100vw"
                                     type="image/webp">
@@ -150,25 +152,26 @@
                                     alt="Assiette de tarte salée agrémentée de verdures" width="492" height="328">
                             </picture>
                         </a>
-                        <div class="card__content">
+                        <div class="card-restaurant__content">
                             <div class="text-box">
                                 <h3>À la française</h3>
                                 <p>Cité Rouge</p>
                             </div>
-                            <div class="heart-box">
-                                <input type="checkbox" id="toggle3" tabindex="0">
-                                <label for="toggle3">
+                            <div class="heartbox">
+                                <input type="checkbox" id="toggle2" aria-labelledby="title2">
+                                <label for="toggle2">
                                     <i class="fa-regular fa-heart" aria-hidden="true"></i>
-                                    <span class="visually-hidden-checkbox">Ajouter aux favoris</span>
+                                    <span id="title2" class="visually-hidden-heartbox" aria-hidden="true">Ajouter aux
+                                        favoris</span>
                                 </label>
                             </div>
                         </div>
                     </article>
                 </li>
-                <li>
-                    <article class="card card-restaurant">
+                <li class="card-restaurant">
+                    <article>
                         <a href="./pages/le-delice-des-sens.html" aria-label="Page du restaurant - Le délice des sens">
-                            <picture class="card__picture">
+                            <picture class="card-restaurant__picture">
                                 <source media="(max-width: 374px)"
                                     srcset="./images/restaurants/small/louis-hansel-shotsoflouis-small.webp 631w"
                                     sizes="100vw" type="image/webp">
@@ -186,16 +189,17 @@
                                     width="631" height="432">
                             </picture>
                         </a>
-                        <div class="card__content">
+                        <div class="card-restaurant__content">
                             <div class="text-box">
                                 <h3>Le délice des sens</h3>
                                 <p>Folie-Méricourt</p>
                             </div>
-                            <div class="heart-box">
-                                <input type="checkbox" id="toggle4" tabindex="0">
-                                <label for="toggle4">
+                            <div class="heartbox">
+                                <input type="checkbox" id="toggle3" aria-labelledby="title3">
+                                <label for="toggle3">
                                     <i class="fa-regular fa-heart" aria-hidden="true"></i>
-                                    <span class="visually-hidden-checkbox">Ajouter aux favoris</span>
+                                    <span id="title3" class="visually-hidden-heartbox" aria-hidden="true">Ajouter aux
+                                        favoris</span>
                                 </label>
                             </div>
                         </div>
@@ -209,7 +213,8 @@
         <div class="logo">ohmyfood</div>
         <ul>
             <li><a href="#"><i class="fa fa-utensils" aria-hidden="true"></i>Proposer un restaurant</a></li>
-            <li><a href="#"><img src="./images/icons/handshake.svg" class="handshake" aria-hidden="true" alt="">Devenir partenaire</a></li>
+            <li><a href="#"><img src="./images/icons/handshake.svg" class="handshake" aria-hidden="true" alt="">Devenir
+                    partenaire</a></li>
             <li><a href="#">Mentions légales</a></li>
             <li><a href="mailto:">Contact</a></li>
         </ul>

@@ -233,14 +233,24 @@ input[type=checkbox], input[type=radio] {
   padding: 0;
 }
 
+/*=====  responsive ======*/
 .hero, .restaurants, footer {
   padding: 6% 4%;
 }
 
-.location, .hero, .journey, .restaurants, header, .journey .card__step > i, .heart-box, .loader, .loader__element--3 {
+.location, .hero, .journey, .restaurants, header, .card-journey > i, .heartbox, .heartbox label, .loader, .loader__element--3 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.card li {
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+}
+.card li:hover {
+  transform: scale(1.01);
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
 @keyframes reveal-container {
@@ -291,6 +301,16 @@ input[type=checkbox], input[type=radio] {
     color: #9356DC;
   }
 }
+@keyframes rotate-icon {
+  0% {
+    transform: rotate(0);
+    transform-origin: center center;
+  }
+  100% {
+    transform: rotate(1turn);
+    transform-origin: center center;
+  }
+}
 @keyframes appear {
   0% {
     opacity: 0;
@@ -301,10 +321,10 @@ input[type=checkbox], input[type=radio] {
     transform: translateY(0);
   }
 }
+/*=====  A décommenter pour mise en place de la préférence - réduction d'animations ======*/
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
-  background-color: #353535;
   font-size: 62.5%;
 }
 
@@ -336,19 +356,23 @@ input[type=checkbox] {
 a {
   display: block;
   text-decoration: none;
-  color: #000000;
+  color: #000;
 }
 
 footer a {
   display: inline-block;
 }
 
+/*=====  states ======*/
 a:hover,
-a:focus {
+a:focus,
+a:active {
   color: #99e2d0;
 }
 
-a:hover .handshake {
+a:hover .handshake,
+a:focus .handshake,
+a:active .handshake {
   filter: invert(30%) sepia(37%) saturate(276%) hue-rotate(112deg) brightness(100%) contrast(91%);
 }
 
@@ -379,13 +403,13 @@ a {
   }
 }
 @supports selector(input:focus-visible) {
-  .card__menu input:focus-visible,
-.heart-box input:focus-visible {
+  .card-menu input:focus-visible,
+.heartbox input:focus-visible {
     outline: none;
     border: 6px solid #99e2d0;
   }
 
-  .card__menu input:focus-visible {
+  .card-menu input:focus-visible {
     border-radius: 15px;
   }
 }
@@ -402,6 +426,8 @@ a {
     border-radius: 40px;
   }
 }
+/*=====  font-family ======*/
+/*=====  font-weight ======*/
 body {
   font-size: 1.6rem;
   font-weight: 300;
@@ -410,12 +436,12 @@ body {
 
 h1 {
   font-size: 2.8rem;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 h2 {
   font-size: 2.4rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 h3 {
@@ -534,71 +560,79 @@ h3 {
   background-color: #9356DC;
 }
 
+/*=============================================
+=                    cta                      =
+=============================================*/
 .cta {
   padding: 1em 2em;
   margin: 2em 0;
+  font-weight: 500;
   border-radius: 40px;
-  color: #FFFFFF;
+  color: #FFF;
   background-image: linear-gradient(#FF79DA, #9356DC);
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
-  font-weight: 500;
   text-align: center;
+  /*=====  states ======*/
+}
+.cta--order {
+  width: 180px;
+  margin: 0 0 60px;
 }
 .cta:hover, .cta:focus, .cta:active {
   color: #fff;
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.4);
   background-image: linear-gradient(rgba(255, 121, 218, 0.95), rgba(147, 86, 220, 0.95));
-  color: #fff;
   transform: scale(0.98);
 }
 
-.heart-box {
+/*=============================================
+=                  heartbox                  =
+=============================================*/
+.heartbox {
   height: 40px;
   width: 40px;
   position: relative;
+  /*=====  states ======*/
 }
-.heart-box label {
+.heartbox label {
   width: 80%;
   height: 80%;
-  display: block;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
-.heart-box label i {
-  font-style: normal;
+.heartbox label i {
   content: "\f004";
   font-family: "Font Awesome 5 Free";
   font-size: 2.5rem;
   font-weight: 400;
+  font-style: normal;
   color: #7E7E7E;
-  cursor: pointer;
   padding: 0.2em;
 }
-.heart-box label i:hover {
-  color: transparent;
-  font-weight: 900;
-  background: linear-gradient(#FF79DA, #9356DC);
-  -webkit-background-clip: text;
-  background-clip: text;
-  animation: heartfill 1s linear backwards;
+.heartbox label .visually-hidden-heartbox {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
 }
-.heart-box input {
+.heartbox input {
   position: absolute;
   width: 100%;
   height: 100%;
 }
-.heart-box input:checked ~ label i {
+.heartbox input:checked ~ label i {
   color: transparent;
   font-weight: 900;
   background: linear-gradient(#FF79DA, #9356DC);
   -webkit-background-clip: text;
   background-clip: text;
-  background-size: cover;
   animation: heartfill 1s linear backwards;
 }
 
-.check-box {
+/*=============================================
+=                  checkbox                  =
+=============================================*/
+.card-menu {
+  /*=====  states ======*/
+}
+.card-menu__checkbox {
   position: absolute;
   transform: translateX(80px);
   width: 80px;
@@ -606,7 +640,7 @@ h3 {
   right: 0;
   transition: 0.5s linear;
 }
-.check-box label {
+.card-menu__checkbox label {
   content: "";
   position: absolute;
   max-width: 100px;
@@ -615,78 +649,85 @@ h3 {
   background-color: #99e2d0;
   transition: transform 0.5s linear;
   z-index: 1;
-  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   will-change: transform;
 }
-.check-box label i {
-  font-style: normal;
+.card-menu__checkbox label i {
   content: "\f00c";
   font-family: "Font Awesome 5 Free";
   position: absolute;
   font-size: 1em;
   font-weight: 900;
-  color: #99e2d0;
-  background-color: #fff;
+  font-style: normal;
   width: 20px;
   height: 20px;
   padding: 3%;
   border-radius: 50%;
-  transition: 0.5s linear;
+  color: #99e2d0;
+  background-color: #fff;
   z-index: 2;
 }
-
-.visually-hidden-checkbox {
-  opacity: 0;
-  font-size: 0;
-  display: block;
-}
-
-.visually-hidden {
+.card-menu__checkbox label .visually-hidden {
   opacity: 0;
 }
+.card-menu input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.card-menu input:checked ~ .card-menu__price {
+  margin-right: 80px;
+}
+.card-menu input:checked ~ .card-menu__checkbox {
+  transform: translateX(0);
+}
+.card-menu input:checked ~ .card-menu__checkbox > label i {
+  animation: 0.5s rotate-icon linear forwards;
+}
 
+.card {
+  /*=============================================
+  =               card journey                  =
+  =============================================*/
+  /*=============================================
+  =               card restaurant               =
+  =============================================*/
+  /*=============================================
+  =                  card menu                  =
+  =============================================*/
+}
 .card li {
-  padding: 1.8em 2em;
   margin-bottom: 1.5em;
-  background-color: #F6F6F6;
   border-radius: 15px;
+}
+.card-journey {
+  width: clamp(250px, 85vw, 350px);
+  padding: 1.8em 2em;
+  margin: 10px 10px 20px;
+  background-color: #F6F6F6;
   position: relative;
-  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  transition: all 0.3s;
+  /*=====  states  ======*/
+  /*=====  responsive  ======*/
 }
-.card li:hover {
-  transform: scale(1.01);
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 12px 40px 0 rgba(0, 0, 0, 0.1);
-}
-.card-restaurant {
-  transition: all 0.3s;
-}
-.card-restaurant:hover {
-  transform: scale(1.01);
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 12px 40px 0 rgba(0, 0, 0, 0.1);
-}
-
-.journey .card__step {
-  width: clamp(250px, 85vw, 350px);
-  transition: 0.5s linear;
-}
-.journey .card__step::before {
+.card-journey::before {
   font-size: 1.4rem;
-  font-weight: 600;
+  font-weight: 900;
   position: absolute;
   top: 50%;
   left: 0;
   transform: translate(-50%, -50%);
-  color: #FFFFFF;
+  color: #FFF;
   z-index: 2;
 }
-.journey .card__step::after {
+.card-journey::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -698,16 +739,16 @@ h3 {
   border-radius: 50%;
   z-index: 1;
 }
-.journey .card__step:nth-of-type(1)::before {
+.card-journey:nth-of-type(1)::before {
   content: "1";
 }
-.journey .card__step:nth-of-type(2)::before {
+.card-journey:nth-of-type(2)::before {
   content: "2";
 }
-.journey .card__step:nth-of-type(3)::before {
+.card-journey:nth-of-type(3)::before {
   content: "3";
 }
-.journey .card__step > i {
+.card-journey > i {
   width: 20px;
   height: 20px;
   margin: 0 min(6vw, 2em) 0 2vw;
@@ -716,10 +757,11 @@ h3 {
   color: #7E7E7E;
   transition: 0.5s linear;
 }
-.journey .card__step > h3 {
+.card-journey > h3 {
   position: relative;
+  font-weight: 500;
 }
-.journey .card__step > h3::before {
+.card-journey > h3::before {
   font-family: "Font Awesome 5 Free";
   font-size: 2rem;
   font-weight: 900;
@@ -729,50 +771,45 @@ h3 {
   left: -40px;
   transform: translate(-50%, -50%);
 }
-.journey .card__step:hover {
+.card-journey:hover {
   background-color: rgba(147, 86, 220, 0.2);
 }
-.journey .card__step:hover i {
+.card-journey:hover i {
   color: #9356DC;
 }
-.journey .card__step:nth-child(1) {
+.card-journey:nth-child(1) {
   animation-delay: 2000ms;
 }
-.journey .card__step:nth-child(2) {
+.card-journey:nth-child(2) {
   animation-delay: 2500ms;
 }
-.journey .card__step:nth-child(3) {
+.card-journey:nth-child(3) {
   animation-delay: 3000ms;
 }
-.journey .card__step:nth-child(1) > i {
+.card-journey:nth-child(1) > i {
   animation-delay: 2000ms;
 }
-.journey .card__step:nth-child(2) > i {
+.card-journey:nth-child(2) > i {
   animation-delay: 2500ms;
 }
-.journey .card__step:nth-child(3) > i {
+.card-journey:nth-child(3) > i {
   animation-delay: 3000ms;
 }
 @media screen and (min-width: 768px) {
-  .journey .card {
-    width: 90%;
-    justify-content: space-around;
-  }
-  .journey .card__step {
+  .card-journey {
     flex-direction: column-reverse;
     width: 30%;
     max-width: 350px;
-    height: auto;
-    margin-top: 40px;
+    margin: 30px 10px 20px;
     text-align: center;
   }
-  .journey .card__step::before {
+  .card-journey::before {
     position: absolute;
     top: 0;
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  .journey .card__step::after {
+  .card-journey::after {
     content: "";
     position: absolute;
     top: 0;
@@ -781,180 +818,142 @@ h3 {
     width: 50px;
     height: 50px;
   }
-  .journey .card__step > i {
+  .card-journey > i {
     width: 40px;
     height: 40px;
     font-size: 4rem;
     margin: 20px 0 0;
   }
-  .journey .card__step > h3::before {
-    font-size: 4rem;
+  .card-journey > h3 {
+    margin: 10px 0;
   }
 }
-
-.restaurants .card {
+.card-restaurant {
   width: clamp(250px, 90vw, 400px);
-  border-radius: 15px;
   overflow: hidden;
-  margin-bottom: 20px;
-  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.002);
+  /*=====  responsive  ======*/
 }
-.restaurants .card__picture {
+.card-restaurant__picture {
   display: block;
-  position: relative;
-  height: 60%;
   overflow: hidden;
   position: relative;
 }
-.restaurants .card__picture > img {
+.card-restaurant__picture > img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   aspect-ratio: 16/9;
 }
-.restaurants .card__picture.active::before {
+.card-restaurant__picture.active::before {
   content: "Nouveau";
   padding: 0.5em 1em;
   position: absolute;
-  font-weight: 700;
+  font-weight: 600;
   top: 15px;
   right: 15px;
   background-color: #99e2d0;
   border-radius: 2px;
   color: #278870;
 }
-.restaurants .card__content {
+.card-restaurant__content {
   padding: 1.2em 1em 1em 1em;
-  background-color: #FFFFFF;
-  height: 40%;
+  background-color: #FFF;
   display: flex;
-  flex-direction: row;
 }
-.restaurants .card__content .text-box {
+.card-restaurant__content .text-box {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
-.restaurants .card__content .text-box h3 {
+.card-restaurant__content .text-box h3 {
   font-size: 1.8rem;
   margin-bottom: 5px;
 }
 @media screen and (min-width: 768px) {
-  .restaurants .card {
+  .card-restaurant {
     margin: 20px;
   }
 }
-
-.menu .card {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.menu .card__menu {
-  background-color: #FFFFFF;
-  padding: 0 1em;
-  display: flex;
-  justify-content: space-between;
+.card-menu {
   max-width: 350px;
   width: 100%;
   min-height: 70px;
-  cursor: pointer;
+  padding: 0 1em;
+  background-color: #FFF;
+  display: flex;
+  justify-content: space-between;
   animation: appear 500ms linear;
   animation-fill-mode: forwards;
   animation-delay: 2000ms;
   overflow: hidden;
+  /*=====  responsive  ======*/
 }
-.menu .card__menu:nth-child(1) {
+.card-menu:nth-child(1) {
   animation-delay: 100ms;
 }
-.menu .card__menu:nth-child(2) {
+.card-menu:nth-child(2) {
   animation-delay: 200ms;
 }
-.menu .card__menu:nth-child(3) {
+.card-menu:nth-child(3) {
   animation-delay: 300ms;
 }
-.menu .card__menu:nth-child(4) {
+.card-menu:nth-child(4) {
   animation-delay: 400ms;
 }
-.menu .card__menu:nth-child(5) {
+.card-menu:nth-child(5) {
   animation-delay: 500ms;
 }
-.menu .card__menu:nth-child(6) {
+.card-menu:nth-child(6) {
   animation-delay: 600ms;
 }
-.menu .card__menu:nth-child(7) {
+.card-menu:nth-child(7) {
   animation-delay: 700ms;
 }
-.menu .card__menu:nth-child(8) {
+.card-menu:nth-child(8) {
   animation-delay: 800ms;
 }
-.menu .card__menu:nth-child(9) {
+.card-menu:nth-child(9) {
   animation-delay: 900ms;
 }
-.menu .card__menu:nth-child(10) {
+.card-menu:nth-child(10) {
   animation-delay: 1000ms;
 }
-.menu .card__menu .card-container {
+.card-menu article {
   max-width: 350px;
   width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.menu .card__menu .card-container .card__text {
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.card-menu__text {
   min-width: 60%;
 }
-.menu .card__menu .card-container .card__text h3 {
-  font-size: unset;
+.card-menu__text h3 {
   font-weight: 500;
   margin-bottom: 5px;
   max-width: 225px;
-  overflow: hidden;
-  word-wrap: break-word;
 }
-.menu .card__menu .card-container .card__text p {
+.card-menu__text p {
   font-size: 1.4rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.menu .card__menu .card-container .card__price {
-  background-color: #FFFFFF;
+.card-menu__price {
+  width: 20%;
+  height: 100%;
+  font-weight: 600;
   padding-bottom: 10px;
-  min-height: 70px;
-  font-weight: 800;
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  max-width: 50px;
-  width: 20%;
   transition: 0.5s linear;
 }
-.menu .card__menu .card-container input {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-.menu .card__menu .card-container input:checked ~ .card__price {
-  margin-right: 80px;
-}
-.menu .card__menu .card-container input:checked ~ .check-box {
-  transform: translateX(0);
-}
-.menu .card__menu .card-container input:checked ~ .check-box > label i {
-  transform: rotate(1turn);
-  transform-origin: center center;
+@media screen and (min-width: 768px) {
+  .card-menu .card {
+    min-width: 330px;
+  }
 }
 
 header {
@@ -962,7 +961,7 @@ header {
   height: 60px;
   position: fixed;
   top: 0;
-  background-color: #FFFFFF;
+  background-color: #FFF;
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
   z-index: 20;
 }
@@ -990,10 +989,10 @@ footer .logo {
   font-size: 2rem;
   font-weight: 300;
   margin-bottom: 10px;
-  color: #FFFFFF;
+  color: #FFF;
 }
 footer a {
-  color: #FFFFFF;
+  color: #FFF;
 }
 footer ul {
   min-height: 100px;
@@ -1011,6 +1010,9 @@ main {
   margin-top: 60px;
 }
 
+/*=============================================
+=                   location                 =
+=============================================*/
 .location {
   padding: 4% 3%;
   font-weight: 400;
@@ -1035,10 +1037,16 @@ main {
   }
 }
 
+/*=============================================
+=                    hero                    =
+=============================================*/
 .hero {
   background-color: #F6F6F6;
   flex-direction: column;
   text-align: center;
+}
+.hero h1 {
+  padding: 0 10%;
 }
 .hero p {
   font-size: 1.8rem;
@@ -1057,17 +1065,17 @@ main {
   }
 }
 
+/*=============================================
+=                  journey                   =
+=============================================*/
 .journey {
   padding: 8% 0;
-  background-color: #FFFFFF;
+  background-color: #FFF;
   flex-direction: column;
 }
 .journey h2 {
   padding-left: 4%;
   align-self: flex-start;
-}
-.journey ul {
-  margin: 10px 10px 20px;
 }
 @media screen and (min-width: 768px) {
   .journey {
@@ -1075,9 +1083,14 @@ main {
   }
   .journey .card {
     display: flex;
+    width: 90%;
+    justify-content: space-around;
   }
 }
 
+/*=============================================
+=                 restaurants                 =
+=============================================*/
 .restaurants {
   flex-direction: column;
   background-color: #F6F6F6;
@@ -1101,115 +1114,78 @@ main {
   flex-direction: column;
   align-items: center;
   background-color: #F6F6F6;
+  /*=============================================
+  =               menu picture                  =
+  =============================================*/
+  /*=============================================
+  =               menu wrapper                 =
+  =============================================*/
+  /*=====  responsive  ======*/
 }
-.menu .card__picture {
+.menu__picture {
   width: 100%;
 }
-.menu .card__picture img {
+.menu__picture img {
   object-fit: cover;
   width: 100%;
   height: 30vh;
 }
-.menu .wrapper {
+.menu__wrapper {
   width: 100%;
   position: relative;
   top: -40px;
   background-color: #F6F6F6;
   border-radius: 30px 30px 0 0;
-  display: flex;
-  flex-direction: column;
 }
-.menu .wrapper .menu__header {
+.menu__wrapper-header {
   padding: 4% 4% 0;
-  width: 100%;
   display: flex;
   align-items: center;
-  border-radius: 30px 30px 0 0;
 }
-.menu .wrapper .menu__header h1 {
+.menu__wrapper-header h1 {
   font-family: shrikhand, cursive;
   width: 100%;
 }
-.menu .wrapper .menu-bloc {
+.menu__wrapper-section .menu-bloc {
   padding: 0% 4%;
 }
-.menu .wrapper .menu-bloc h2 {
+.menu__wrapper-section .menu-bloc h2 {
   text-transform: uppercase;
   font-weight: 300;
   font-size: 1.8rem;
   position: relative;
   margin-bottom: 25px;
 }
-.menu .wrapper .menu-bloc h2::before {
+.menu__wrapper-section .menu-bloc h2::before {
   content: "";
   position: absolute;
   width: 50px;
-  height: 1px;
   bottom: -10px;
-  left: 0;
   border-bottom: 4px solid #99e2d0;
 }
-.menu .wrapper .menu-bloc h3 {
-  font-size: 1.8rem;
-}
-.menu .cta--order {
-  width: 180px;
-  margin: 0 0 60px;
+.menu__wrapper-section .menu-bloc .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 @media screen and (min-width: 768px) {
-  .menu {
-    background-color: #F6F6F6;
+  .menu .menu__picture img {
+    height: 50vh;
   }
-  .menu .card__picture img {
-    object-fit: cover;
-    object-position: top;
-    width: 100%;
-    height: 40vh;
-  }
-  .menu .card__picture .wrapper {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .menu .card__picture .wrapper .menu-bloc {
-    padding: 0;
-    width: 33%;
-  }
-  .menu .card__picture .menu__header {
-    width: 100%;
+}
+@media screen and (min-width: 1200px) {
+  .menu .menu__wrapper-section {
+    padding: 0 4%;
     display: flex;
     justify-content: space-between;
   }
-  .menu .card__picture .menu__header .heart-box {
-    display: flex;
-    justify-content: flex-end;
-  }
-  .menu .card__picture .card__menu {
+  .menu .menu__wrapper-section .menu-bloc {
     width: 100%;
+    max-width: 350px;
+    padding: 0;
   }
 }
-@media screen and (min-width: 1024px) {
-  .menu {
-    background-color: #F6F6F6;
-  }
-  .menu .card__picture img {
-    height: 50vh;
-    object-position: center;
-  }
-  .menu .wrapper-section {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-  .menu .wrapper-section .menu-bloc {
-    width: 30%;
-  }
-  .menu .wrapper-section .menu-bloc .card__menu {
-    min-width: 330px;
-  }
-}
+
+/*=====  A décommenter pour mise en place du dark-thème selon préférence navigateur ======*/
 
 /*# sourceMappingURL=style.css.map */

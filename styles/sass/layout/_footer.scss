@@ -5,7 +5,7 @@
 
 
 footer {
-    @extend %wrapper;
+    @extend %menu__wrapper;
     display: flex;
     flex-direction: column;
     background-color: $background-dark-heavy;

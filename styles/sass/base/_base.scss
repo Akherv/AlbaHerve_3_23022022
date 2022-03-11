@@ -4,7 +4,6 @@
 html {
     box-sizing: border-box;
     scroll-behavior: smooth;
-    background-color: $background-dark-heavy;
     font-size: 62.5%;
 }
 
@@ -43,12 +42,17 @@ footer a {
     display: inline-block;
 }
 
+/*=====  states ======*/
+
 a:hover,
-a:focus {
+a:focus,
+a:active {
     color: $color-tertiary;
 }
 
-a:hover .handshake{
+a:hover .handshake,
+a:focus .handshake,
+a:active .handshake{
     filter: invert(30%) sepia(37%) saturate(276%) hue-rotate(112deg) brightness(100%) contrast(91%);
 }
 
@@ -80,13 +84,13 @@ a {
 }
 
 @supports selector(input:focus-visible) {
-    .card__menu input:focus-visible,
-    .heart-box input:focus-visible {
+    .card-menu input:focus-visible,
+    .heartbox input:focus-visible {
         outline: none;
         border: 6px solid $color-tertiary;
     }
 
-    .card__menu input:focus-visible {
+    .card-menu input:focus-visible {
         border-radius: 15px;
     }
 }

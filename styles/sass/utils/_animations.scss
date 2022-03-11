@@ -63,6 +63,18 @@
     }
 }
 
+@keyframes rotate-icon {
+    0% {
+        transform: rotate(0);
+        transform-origin: center center;
+    }
+
+    100% {
+        transform: rotate(1turn);
+        transform-origin: center center;
+    }
+}
+
 @keyframes appear {
     0% {
         opacity: 0;
@@ -75,8 +87,7 @@
     }
 }
 
-
-//A décocher pour mise en place de la préférence - réduction d'animations
+/*=====  A décommenter pour mise en place de la préférence - réduction d'animations ======*/
 
 // @media (prefers-reduced-motion: reduce) {
 //     * {

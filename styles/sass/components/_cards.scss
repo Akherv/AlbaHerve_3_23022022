@@ -7,44 +7,28 @@
 .card {
 
     & li {
-        padding: 1.8em 2em;
         margin-bottom: 1.5em;
-        background-color: $background-medium;
         border-radius: 15px;
+        @extend %card-hover;
+    }
+
+    /*=============================================
+    =               card journey                  =
+    =============================================*/
+
+    &-journey {
+        width: clamp(250px, 85vw, 350px);
+        padding: 1.8em 2em;
+        margin: 10px 10px 20px;
+        background-color: $background-medium;
         position: relative;
-        @include shadow(#000000, 0.2);
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        transition: all 0.3s;
-
-        &:hover {
-            transform: scale(1.01);
-            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 12px 40px 0 rgba(0, 0, 0, 0.1);
-        }
-    }
-
-    &-restaurant {
-        transition: all 0.3s;
-
-        &:hover {
-            transform: scale(1.01);
-            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 12px 40px 0 rgba(0, 0, 0, 0.1);
-        }
-    }
-}
-
-
-
-.journey .card {
-
-    &__step {
-        width: clamp(250px, 85vw, 350px);
-        transition: 0.5s linear;
 
         &::before {
             font-size: 1.4rem;
-            font-weight: $font-medium;
+            font-weight: 900;
             @include absolute-center(50%, 0, -50%, -50%);
             color: $font-light;
             z-index: 2;
@@ -60,8 +44,6 @@
             z-index: 1;
         }
 
-
-
         &:nth-of-type(1)::before {
             content: "1";
         }
@@ -74,8 +56,7 @@
             content: "3";
         }
 
-
-        &>i {
+        & > i {
             width: 20px;
             height: 20px;
             margin: 0 min(6vw, 2em) 0 2vw;
@@ -86,8 +67,9 @@
             transition: 0.5s linear;
         }
 
-        &>h3 {
+        & > h3 {
             position: relative;
+            font-weight: $font-medium;
 
             &::before {
                 font-family: "Font Awesome 5 Free";
@@ -98,6 +80,8 @@
             }
         }
 
+        /*=====  states  ======*/
+
         &:hover {
             @include background-opacity-light($color-primary)
         }
@@ -105,8 +89,6 @@
         &:hover i {
             color: $color-primary;
         }
-
-
 
         &:nth-child(1) {
             animation-delay: 2000ms;
@@ -120,30 +102,25 @@
             animation-delay: 3000ms;
         }
 
-        &:nth-child(1)>i {
+        &:nth-child(1) > i {
             animation-delay: 2000ms;
         }
 
-        &:nth-child(2)>i {
+        &:nth-child(2) > i {
             animation-delay: 2500ms;
         }
 
-        &:nth-child(3)>i {
+        &:nth-child(3) > i {
             animation-delay: 3000ms;
         }
 
-    }
+        /*=====  responsive  ======*/
 
-    @include media-min($tablet) {
-        width: 90%;
-        justify-content: space-around;
-
-        &__step {
+        @include media-min ($tablet) {
             flex-direction: column-reverse;
             width: 30%;
             max-width: 350px;
-            height: auto;
-            margin-top: 40px;
+            margin: 30px 10px 20px;
             text-align: center;
 
             &::before {
@@ -157,102 +134,91 @@
                 height: 50px;
             }
 
-            &>i {
+            & > i {
                 width: 40px;
                 height: 40px;
                 font-size: 4rem;
                 margin: 20px 0 0;
             }
 
-            &>h3 {
-                &::before {
-                    font-size: 4rem;
+            & > h3 {
+                margin: 10px 0;
+            }
+        }
+    }
+
+    /*=============================================
+    =               card restaurant               =
+    =============================================*/
+
+    &-restaurant {
+        width: clamp(250px, 90vw, 400px);
+        overflow: hidden;
+
+        &__picture {
+            display: block;
+            overflow: hidden;
+            position: relative;
+
+            & > img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                aspect-ratio: 16/9;
+            }
+
+            &.active::before {
+                content: "Nouveau";
+                padding: 0.5em 1em;
+                position: absolute;
+                font-weight: $font-bold;
+                top: 15px;
+                right: 15px;
+                background-color: $color-tertiary;
+                border-radius: 2px;
+                @include color-opacity-dark($color-tertiary);
+            }
+        }
+
+        &__content {
+            padding: 1.2em 1em 1em 1em;
+            background-color: $background-light;
+            display: flex;
+
+            & .text-box {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+
+                & h3 {
+                    font-size: 1.8rem;
+                    margin-bottom: 5px;
                 }
             }
         }
-    }
-}
 
+        /*=====  responsive  ======*/
 
-.restaurants .card {
-    width: clamp(250px, 90vw, 400px);
-    border-radius: 15px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    @include shadow(#000000, 0.2%);
-
-    &__picture {
-        display: block;
-        position: relative;
-        height: 60%;
-        overflow: hidden;
-        position: relative;
-
-        &>img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            aspect-ratio: 16/9;
-        }
-
-        &.active::before {
-            content: "Nouveau";
-            padding: 0.5em 1em;
-            position: absolute;
-            font-weight: 700;
-            top: 15px;
-            right: 15px;
-            background-color: $color-tertiary;
-            border-radius: 2px;
-            @include color-opacity-dark($color-tertiary);
+        @include media-min ($tablet) {
+            margin: 20px;
         }
     }
 
+    /*=============================================
+    =                  card menu                  =
+    =============================================*/
 
-    &__content {
-        padding: 1.2em 1em 1em 1em;
-        background-color: $background-light;
-        height: 40%;
-        display: flex;
-        flex-direction: row;
-
-        & .text-box {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-
-            & h3 {
-                font-size: 1.8rem;
-                margin-bottom: 5px;
-            }
-        }
-    }
-
-    @include media-min($tablet) {
-        margin: 20px;
-    }
-}
-
-
-.menu .card {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    $anim-speed: 500ms;
-
-    &__menu {
-        background-color: $background-light;
-        padding: 0 1em;
-        display: flex;
-        justify-content: space-between;
+    &-menu {
         max-width: 350px;
         width: 100%;
         min-height: 70px;
-        cursor: pointer;
+        padding: 0 1em;
+        background-color: $background-light;
+        display: flex;
+        justify-content: space-between;
+
+        $anim-speed: 500ms;
         animation: appear $anim-speed linear;
         animation-fill-mode: forwards;
         animation-delay: 2000ms;
@@ -264,111 +230,49 @@
             }
         }
 
-
-
-        & .card-container {
+        & article {
             max-width: 350px;
             width: 100%;
-            height: 100%;
             display: flex;
             align-items: center;
             justify-content: space-between;
+        }
 
+        &__text {
+            min-width: 60%;
 
-            & .card {
-                &__text {
-                    display: flex;
-                    flex-direction: column;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    min-width: 60%;
-
-                    & h3 {
-                        font-size: unset;
-                        font-weight: 500;
-                        margin-bottom: 5px;
-                        max-width: 225px;
-                        overflow: hidden;
-                        word-wrap: break-word;
-                    }
-
-                    & p {
-                        font-size: 1.4rem;
-                        white-space: nowrap;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                    }
-                }
-
-                &__price {
-                    background-color: $background-light;
-                    padding-bottom: 10px;
-                    min-height: 70px;
-                    font-weight: 800;
-                    display: flex;
-                    align-items: flex-end;
-                    justify-content: center;
-                    max-width: 50px;
-                    width: 20%;
-                    transition: 0.5s linear;
-
-                }
+            & h3 {
+                font-weight: $font-medium;
+                margin-bottom: 5px;
+                max-width: 225px;
             }
 
-
-            & input{
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                top: 0;
-                left: 0;
-                z-index: 1;
-
-                &:checked {
-
-                    & ~ .card__price {
-                        margin-right: 80px;
-                    }
-
-                    & ~ .check-box {
-                        transform: translateX(0);
-                    }
-
-                    & ~ .check-box>label i {
-                        transform: rotate(1turn);
-                        transform-origin: center center;
-                    }
-                }
-                
-
-
-
-
-                // &:not(:checked) {
-                //     & ~ .card__price {
-                //         margin-right: 0;
-                //     }
-
-                //     & ~ .check-box>label {
-                //         transform: translateX(0);
-                //     }
-
-                //     & ~ .check-box>label i {
-                //         transform: rotate(-1turn);
-                //         transform-origin: center center;
-                //     }
-                // }
-
-
-
+            & p {
+                font-size: 1.4rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
+        }
 
-            // &:focus-within  {
+        &__price {
+            width: 20%;
+            height: 100%;
+            font-weight: $font-bold;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            transition: 0.5s linear;
+        }
 
-            //      & .card__price {
-            //             margin-right: 80px;
-            //         }
-            // }
+        /*=====  responsive  ======*/
+        
+        @include media-min ($tablet) {
+
+            .card {
+                min-width: 330px;
+            }
         }
     }
 }
